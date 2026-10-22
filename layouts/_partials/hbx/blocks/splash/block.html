@@ -14,7 +14,10 @@
 
 <div class="splash-inner">
   <div class="splash-text">
-    <h1 class="splash-title">{{ $title }}</h1>
+    {{/* given names regular, surname (last word) bold, like the logo */}}
+    {{ $words := split $title " " }}
+    {{ $n := len $words }}
+    <h1 class="splash-title">{{ if gt $n 1 }}{{ delimit (first (sub $n 1) $words) " " }} <span class="splash-surname">{{ index $words (sub $n 1) }}</span>{{ else }}<span class="splash-surname">{{ $title }}</span>{{ end }}</h1>
     {{ with $content.subtitle }}<p class="splash-subtitle">{{ . | markdownify }}</p>{{ end }}
 
     {{ with $profile.links }}
