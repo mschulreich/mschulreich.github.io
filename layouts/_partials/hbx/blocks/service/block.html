@@ -1,0 +1,33 @@
+{{/* Custom block: service — conference organization and refereeing from data/service.yaml
+     content: title, intro (optional) */}}
+{{ $c := .wcBlock.content | default dict }}
+{{ $d := hugo.Data.service }}
+<div class="sec-wrap">
+  {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  {{ with $c.intro }}<p class="sec-intro">{{ . | markdownify }}</p>{{ end }}
+
+  {{ with $d.organization }}
+    <h3 class="sec-subheading">Conference organization</h3>
+    <ul class="talk-list">
+      {{ range sort . "date" "desc" }}
+        {{ $dt := time .date }}
+        <li class="talk">
+          <div class="talk-date">{{ .when | default ($dt.Format "Jan 2, 2006") }}
+            {{ if $dt.After now }}<span class="talk-badge talk-badge--upcoming">Upcoming</span>{{ end }}
+          </div>
+          <div class="talk-body">
+            <p class="talk-title">{{ with .url }}<a class="svc-link" href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .title | markdownify }}{{ with .url }}</a>{{ end }}</p>
+            {{ with .event }}<p class="talk-event">{{ . | markdownify }}</p>{{ end }}
+            <p class="talk-meta">{{ .place }} <span class="talk-badge talk-badge--invited">{{ .role }}</span></p>
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+
+  {{ with $d.refereeing }}
+    <h3 class="sec-subheading">Peer review</h3>
+    {{ $n := len .journals }}
+    <p class="svc-referee">Referee for {{ range $i, $j := .journals }}{{ if $i }}{{ if eq $i (sub $n 1) }}, and {{ else }}, {{ end }}{{ end }}<em>{{ $j }}</em>{{ end }}{{ with .since }} (since {{ . }}){{ end }}.</p>
+  {{ end }}
+</div>

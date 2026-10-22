@@ -1,0 +1,13 @@
+{{/* Light e-mail protection: addresses are stored base64-encoded in data-m and only turned
+     into a mailto link in the browser, so simple harvesting bots do not find them in the HTML. */}}
+<script>
+  document.querySelectorAll('a.js-mail[data-m]').forEach(function (a) {
+    try {
+      var m = atob(a.getAttribute('data-m'));
+      a.href = 'mailto:' + m;
+      if (a.hasAttribute('data-show')) a.textContent = m;
+    } catch (e) {}
+  });
+  /* copyright year: the build year is in the HTML; show the current year even if the site was not rebuilt */
+  document.querySelectorAll('.js-year').forEach(function (s) { s.textContent = new Date().getFullYear(); });
+</script>

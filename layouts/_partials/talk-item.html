@@ -1,0 +1,19 @@
+{{/* One entry of the talks list (used by the custom `talks` block) */}}
+  {{ $t := .t }}{{ $now := .now }}{{ $labels := .labels }}
+  {{ $d := time $t.date }}
+  <li class="talk">
+    <div class="talk-date">{{ $t.when | default ($d.Format "Jan 2, 2006") }}
+      {{ if $d.After $now }}<span class="talk-badge talk-badge--upcoming">Upcoming</span>{{ end }}
+    </div>
+    <div class="talk-body">
+      {{ with $t.title }}<p class="talk-title">{{ . | markdownify }}</p>{{ end }}
+      {{ range $t.titles }}<p class="talk-title">{{ . | markdownify }}</p>{{ end }}
+      <p class="talk-event">{{ with $t.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ $t.event | markdownify }}{{ with $t.url }}</a>{{ end }}</p>
+      <p class="talk-meta">{{ $t.place }}
+        <span class="talk-badge talk-badge--{{ $t.type }}">{{ $t.label | default (index $labels $t.type) }}</span>
+        {{ with $t.note }}<span class="talk-badge talk-badge--note">{{ . }}</span>{{ end }}
+        {{ with $t.slides }}<a class="talk-link" href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
+        {{ with $t.video }}<a class="talk-link" href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
+      </p>
+    </div>
+  </li>

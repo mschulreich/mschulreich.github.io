@@ -1,0 +1,19 @@
+{{/* One simulation movie from the page bundle, used inside {{< movies >}}.
+     {{< movie src="file.mp4" poster="file.jpg" caption="..." >}}
+     - loads only on play; click toggles play/pause (no browser controls covering axes/colour bars)
+     - the poster (a frame of the movie) fixes width/height, so the box never jumps */}}
+{{ $src := .Page.Resources.Get (.Get "src") }}
+{{ $poster := "" }}{{ $w := 16 }}{{ $h := 9 }}
+{{ with .Get "poster" }}{{ with $.Page.Resources.Get . }}
+  {{ $p := .Resize "960x webp q80" }}{{ $poster = $p.RelPermalink }}{{ $w = .Width }}{{ $h = .Height }}
+{{ end }}{{ end }}
+{{ with $src }}
+<figure class="movie">
+  <button type="button" class="movie-toggle" aria-label="Play / pause{{ with $.Get "caption" }}: {{ . | plainify }}{{ end }}">
+    <video src="{{ .RelPermalink }}" {{ with $poster }}poster="{{ . }}"{{ end }} width="{{ $w }}" height="{{ $h }}"
+           style="aspect-ratio: {{ $w }} / {{ $h }}" muted loop playsinline preload="none"></video>
+    <span class="movie-play" aria-hidden="true"></span>
+  </button>
+  {{ with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{ end }}

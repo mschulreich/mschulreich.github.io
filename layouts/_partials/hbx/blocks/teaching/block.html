@@ -1,0 +1,20 @@
+{{/* Custom block: teaching — courses from data/teaching.yaml */}}
+{{ $c := .wcBlock.content | default dict }}
+{{ $d := hugo.Data.teaching }}
+<div class="sec-wrap">
+  {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  {{ with $c.intro }}<p class="sec-intro">{{ . | markdownify }}</p>{{ end }}
+  <div class="teach-grid">
+    {{ range $d.courses }}
+      <article class="teach-card">
+        <p class="teach-kind">{{ .kind }} · {{ .place }}</p>
+        <h3 class="teach-title">{{ .title }}</h3>
+        <p class="teach-terms">{{ range $i, $term := .terms }}{{ if $i }} · {{ end }}<span class="nowrap">{{ $term }}</span>{{ end }}</p>
+        {{ with .note }}<p class="teach-note">{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+  {{ with $d.seminars }}
+    <p class="teach-more"><strong>{{ .title }}:</strong> {{ delimit .items " · " }}</p>
+  {{ end }}
+</div>

@@ -1,0 +1,24 @@
+# Academic service (from CV). Shown in the "Service" section of the homepage.
+# organization: date (for sorting / "Upcoming"), when (display), role (badge), title, event, place, url
+organization:
+  - date: 2023-09-11
+    when: Sep 11–15, 2023
+    role: LOC member
+    title: 96th Annual Meeting of the German Astronomical Society (AG 2023)
+    place: Berlin, Germany
+    url: https://ag2023.astronomische-gesellschaft.de
+  - date: 2020-09-23
+    when: Sep 23–24, 2020
+    role: Splinter organizer
+    title: Confronting Simulations of the Interstellar Medium with Observations and Measurements
+    event: Splinter meeting at the 93rd Annual Meeting of the German Astronomical Society, with D. Breitschwerdt
+    place: Online
+    url: https://ag2020.astronomische-gesellschaft.de/view_splinter.php?session=ISM
+
+refereeing:
+  since: 2018
+  journals:
+    - The Astrophysical Journal
+    - Astronomy & Astrophysics
+    - Monthly Notices of the Royal Astronomical Society
+    - Astrophysics and Space Science

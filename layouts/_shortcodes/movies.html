@@ -1,0 +1,15 @@
+{{/* Grid of simulation movies: {{< movies title="Simulation movies" intro="..." >}} {{< movie ... >}} … {{< /movies >}} */}}
+<section class="movies">
+  {{ with .Get "title" }}<h2 class="movies-title">{{ . }}</h2>{{ end }}
+  {{ with .Get "intro" }}<p class="movies-intro">{{ . | markdownify }}</p>{{ end }}
+  <div class="movies-grid">{{ .Inner }}</div>
+</section>
+<script>
+  document.querySelectorAll('.movie-toggle').forEach(function (b) {
+    if (b.dataset.bound) return; b.dataset.bound = 1;
+    var v = b.querySelector('video');
+    b.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
+    v.addEventListener('play', function () { b.classList.add('is-playing'); });
+    v.addEventListener('pause', function () { b.classList.remove('is-playing'); });
+  });
+</script>

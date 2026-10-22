@@ -1,0 +1,40 @@
+{{/* Custom block: splash
+     Full-viewport intro: name, subtitle and the social links of an author profile.
+     Background image/position come from the standard HugoBlox `design.background` settings.
+
+     content:
+       username: me            # profile in data/authors/ (links are taken from there)
+       title: ''               # default: profile display name
+       subtitle: ''
+*/}}
+{{ $block := .wcBlock }}
+{{ $content := $block.content | default dict }}
+{{ $profile := partial "functions/get_author_profile" ($content.username | default "me") }}
+{{ $title := $content.title | default $profile.name.display }}
+
+<div class="splash-inner">
+  <div class="splash-text">
+    <h1 class="splash-title">{{ $title }}</h1>
+    {{ with $content.subtitle }}<p class="splash-subtitle">{{ . | markdownify }}</p>{{ end }}
+
+    {{ with $profile.links }}
+    <ul class="splash-links">
+      {{ range . }}
+        {{ $url := strings.TrimSpace (.url | default .link | default "") }}
+        {{ if $url }}
+          {{ $icon := .icon | default "hero/link" }}
+          {{ $label := .label | default (index (split $icon "/") (sub (len (split $icon "/")) 1)) }}
+          {{ $external := in (slice "http" "https") (urls.Parse $url).Scheme }}
+          <li>
+            {{/* e-mail: address is not written into the HTML; assembled by JS (body-end/mail.html) */}}
+            <a {{ if hasPrefix $url "mailto:" }}href="#contact" class="js-mail" data-m="{{ base64Encode (strings.TrimPrefix "mailto:" $url) }}"{{ else }}href="{{ $url | safeURL }}"{{ end }} {{ if $external }}target="_blank" rel="noopener"{{ end }}
+               title="{{ $label }}" aria-label="{{ $label }}">
+              {{ partial "functions/get_icon" (dict "name" $icon "attributes" "class=\"splash-icon\"") }}
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</div>

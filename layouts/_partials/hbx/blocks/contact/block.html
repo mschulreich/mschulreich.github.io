@@ -1,0 +1,19 @@
+{{/* Custom block: contact — address + links from the author profile */}}
+{{ $c := .wcBlock.content | default dict }}
+{{ $profile := partial "functions/get_author_profile" ($c.username | default "me") }}
+<div class="sec-wrap contact-wrap">
+  {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  <div class="contact-grid">
+    <div>
+      {{ with $c.text }}<p class="sec-intro">{{ . | markdownify }}</p>{{ end }}
+      {{/* e-mail: address is not written into the HTML; assembled by JS (body-end/mail.html) */}}
+      {{ with $c.email }}<p class="contact-email"><a href="#contact" class="js-mail" data-m="{{ base64Encode . }}" data-show>Show e-mail address</a></p>{{ end }}
+    </div>
+    <address class="contact-address">{{ range $c.address }}{{ . | markdownify }}<br>{{ end }}</address>
+    <ul class="contact-links">
+      {{ range $profile.links }}{{ if ne .icon "at-symbol" }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ partial "functions/get_icon" (dict "name" .icon "attributes" "class=\"contact-icon\"") }}<span>{{ .label }}</span></a></li>
+      {{ end }}{{ end }}
+    </ul>
+  </div>
+</div>

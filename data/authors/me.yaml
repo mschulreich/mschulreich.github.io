@@ -1,0 +1,123 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Michael M. Schulreich
+  given: Michael
+  family: Schulreich
+role: Senior Postdoctoral Researcher / Project Leader
+bio: |
+  I am an astrophysicist studying the dynamics of the interstellar and intergalactic medium — above all the interfaces where hot, tenuous gas meets cooler, denser material. I follow this question across scales: from the mid-infrared bubbles around young massive stars, through superbubbles such as the Local Bubble that surrounds the Sun, to Galaxy-scale outflows like the *eROSITA* and *Fermi* bubbles, and to high-velocity clouds and other obstacles moving through hot gas. My approach combines analytic theory with high-resolution 3D (magneto)hydrodynamic simulations and synthetic observables that can be tested directly against data.
+
+  Close to home, the same physics lets us read the history of our cosmic neighborhood in atoms: radionuclides found on Earth and the Moon record the supernovae that created the Local Bubble — an emerging field known as supernova archaeology. At the Department of Astrophysics of the University of Vienna, I lead the FWF-funded project [ORION](https://doi.org/10.55776/PAT1519826) (*Origins of Radionuclides In Our Neighborhood*), which combines 3D magnetohydrodynamic simulations of the Local Bubble and its neighboring superbubbles with *Gaia*-based reconstructions of nearby stellar groups to trace these supernovae.
+
+affiliations:
+  - name: University of Vienna
+    url: https://www.univie.ac.at/
+
+links:
+  - icon: at-symbol
+    url: mailto:michael.schulreich@univie.ac.at
+    label: E-mail
+  - icon: academicons/orcid
+    url: https://orcid.org/0000-0001-7761-9766
+    label: ORCID
+  - icon: academicons/ads
+    url: 'https://scixplorer.org/search?p=1&q=author%3A%22schulreich%2C+m%22&sort=date+desc&d=general'
+    label: SciX
+  - icon: academicons/researchgate
+    url: https://www.researchgate.net/profile/Michael-Schulreich
+    label: ResearchGate
+  - icon: brands/github
+    url: https://github.com/mschulreich
+    label: GitHub
+
+interests:
+  - Interstellar & intergalactic medium
+  - Bubbles & superbubbles
+  - Supernova archaeology
+  - Live radionuclides
+  - Galactic outflows
+  - High-velocity clouds
+  - Shocks & instabilities
+  - Turbulence
+  - Thermal conduction & mixing
+  - 3D (M)HD simulations
+  - Analytic modeling
+
+# Methods & tools (from CV) — currently hidden; set `show_tools: true` in the about block of content/_index.md to show them below the research interests.
+# An item is either a plain name or { name, url } (linked to the official site).
+tools:
+  - group: Simulation codes
+    items:
+      - { name: RAMSES, url: "https://github.com/ramses-organisation/ramses" }
+      - { name: MPI-AMRVAC, url: "https://amrvac.org" }
+      - { name: FLASH, url: "https://flash.rochester.edu" }
+      - { name: VH-1, url: "https://ascl.net/1204.007" }
+  - group: High-performance computing
+    items: [MPI, OpenMP, OpenACC]
+  - group: Programming
+    items: [Python, Fortran, C]
+  - group: Data access
+    items:
+      - { name: ADQL, url: "https://www.ivoa.net/documents/ADQL/" }
+      - { name: TOPCAT, url: "https://www.star.bristol.ac.uk/mbt/topcat/" }
+      - { name: astroquery, url: "https://astroquery.readthedocs.io" }
+  - group: Analysis & visualization
+    items:
+      - { name: yt, url: "https://yt-project.org" }
+      - { name: ParaView, url: "https://www.paraview.org" }
+      - { name: VisIt, url: "https://visit-dav.github.io/visit-website/" }
+      - { name: VAPOR, url: "https://www.vapor.ucar.edu" }
+  - group: Symbolic mathematics
+    items:
+      - { name: Mathematica, url: "https://www.wolfram.com/mathematica/" }
+
+# Positions & education: taken from ORCID 0000-0001-7761-9766 (Oct 2026)
+experience:
+  # not (yet) on ORCID: FWF project ORION, planned start Feb 2027
+  - role: Senior Postdoctoral Researcher / Project Leader
+    org: University of Vienna, Austria
+    start: 2027-02-01
+    summary: Department of Astrophysics
+  - role: Guest Researcher
+    org: Technische Universität Berlin, Germany
+    start: 2025-09-01
+    end: 2027-01-31
+    summary: Zentrum für Astronomie und Astrophysik
+  - role: Postdoctoral Researcher and Lecturer
+    org: Technische Universität Berlin, Germany
+    start: 2015-12-01
+    end: 2025-05-31
+    summary: Zentrum für Astronomie und Astrophysik
+  - role: Research Assistant
+    org: Technische Universität Berlin, Germany
+    start: 2009-01-01
+    end: 2012-07-31
+    summary: Zentrum für Astronomie und Astrophysik
+
+education:
+  - degree: PhD in Physics
+    institution: Technische Universität Berlin, Germany
+    start: 2009-09-01
+    end: 2015-11-30
+    summary: |-
+      Thesis: [*Numerical investigations on the link between the <sup>60</sup>Fe anomaly in a deep-sea ferromanganese crust and the formation of the Local Bubble*](https://doi.org/10.14279/depositonce-4899)
+
+      summa cum laude
+  - degree: MSc in Astronomy
+    institution: University of Vienna, Austria
+    start: 2007-03-01
+    end: 2008-10-31
+    summary: |-
+      Thesis: [*Plasma physical processes and formation of structures in groups and clusters of galaxies*](https://doi.org/10.25365/thesis.1193)
+
+      with distinction
+  - degree: BSc in Astronomy
+    institution: University of Vienna, Austria
+    start: 2003-10-01
+    end: 2006-08-31
+    summary: |-
+      Thesis: *About interstellar magnetic fields, their properties and their formation through the Galactic dynamo*
+
+      with distinction

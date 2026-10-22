@@ -1,0 +1,32 @@
+# Teaching record (from CV), grouped by course
+courses:
+  - title: Astrophysical Fluid Mechanics
+    kind: Lecture
+    place: TU/FU Berlin
+    terms: [Summer 2017, Winter 2019/20, Summer 2024, Summer 2025]
+    note: Summer 2025 with M. Pacicco
+  - title: Physics of the Interstellar and Intergalactic Medium
+    kind: Lecture
+    place: TU/FU Berlin
+    terms: [Winter 2019/20, Summer 2024]
+  - title: Numerical Methods in Astrophysics
+    kind: Lab course
+    place: TU/FU Berlin
+    terms: [Summer 2019, Summer 2020, Winter 2020/21, Summer 2021, Winter 2021/22, Summer 2022, Winter 2022/23, Summer 2023, Winter 2023/24, Winter 2024/25]
+  - title: Modern Methods in Physical Research
+    kind: Lecture series
+    place: TU Berlin
+    terms: [Winter 2020/21, Winter 2021/22, Winter 2022/23, Winter 2023/24]
+  - title: The Cosmic Matter Cycle — Current Research Topics
+    kind: Seminar
+    place: TU/FU Berlin
+    terms: [Summer 2011, Winter 2011/12, Summer 2017, Summer 2018, Summer 2019, Summer 2020, Winter 2020/21, Winter 2021/22, Winter 2022/23]
+    note: with D. Breitschwerdt
+seminars:
+  title: Earlier seminars (TU/FU Berlin, 2009–2012, with D. Breitschwerdt)
+  items:
+    - High-Energy Astrophysics
+    - Dark Energy — The Dark Side of the Universe
+    - Star Formation
+    - Galaxy Evolution
+    - Radiation Processes in Physics and Astronomy

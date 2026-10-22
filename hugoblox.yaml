@@ -1,0 +1,7 @@
+build:
+  hugo_version: '0.168.0'
+deploy:
+  host: 'github-pages'
+template:
+  id: "custom"
+  name: "Research portfolio (built block by block)"

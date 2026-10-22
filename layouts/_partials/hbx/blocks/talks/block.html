@@ -1,0 +1,36 @@
+{{/* Custom block: talks — academic presentations from data/talks.yaml
+     content:
+       title: Talks
+       mode: recent | all        # recent: newest first, `count` items; all: grouped by type
+       count: 5
+       archive: { text: All talks, link: talks/ }
+       intro: ''                 # optional markdown (mode all)
+*/}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content | default dict }}
+{{ $mode := $c.mode | default "recent" }}
+{{ $talks := sort hugo.Data.talks "date" "desc" }}
+{{ $now := now }}
+{{ $labels := dict "invited" "Invited" "contributed" "Contributed" "poster" "Poster" }}
+
+<div class="sec-wrap">
+  {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  {{ with $c.intro }}<div class="sec-intro">{{ . | $page.RenderString }}</div>{{ end }}
+
+  {{ if eq $mode "all" }}
+    {{ range $type := slice "invited" "contributed" "poster" }}
+      {{ $group := where $talks "type" $type }}
+      {{ if $group }}
+        <h3 class="sec-subheading">{{ index (dict "invited" "Invited talks" "contributed" "Contributed talks" "poster" "Posters") $type }} <span class="sec-count">{{ len $group }}</span></h3>
+        <ul class="talk-list">
+          {{ range $group }}{{ partial "talk-item.html" (dict "t" . "now" $now "labels" $labels) }}{{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <ul class="talk-list">
+      {{ range first ($c.count | default 5) $talks }}{{ partial "talk-item.html" (dict "t" . "now" $now "labels" $labels) }}{{ end }}
+    </ul>
+    {{ with $c.archive }}<p class="sec-archive"><a href="{{ .link | relLangURL }}">{{ .text | default "All talks" }} →</a></p>{{ end }}
+  {{ end }}
+</div>

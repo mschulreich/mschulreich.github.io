@@ -1,0 +1,145 @@
+{{/* Custom block: project — a complete project page (used for content/orion/).
+     All texts live in the page's front matter (see content/orion/_index.md).
+     Outputs are collected automatically:
+       - publications whose front matter contains `projects: [<key>]`
+       - talks in data/talks.yaml with `project: <key>`
+*/}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content | default dict }}
+{{ $key := $c.key }}
+
+{{/* ── Hero ── */}}
+<div class="prj-hero">
+  <div class="prj-hero-inner">
+    {{ with resources.Get (printf "media/%s" $c.logo) }}{{ $i := .Resize "900x webp q88" }}
+      <img class="prj-hero-logo" src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="{{ $c.name }} logo">
+    {{ end }}
+    <div class="prj-hero-text">
+      {{ with $c.eyebrow }}<p class="prj-eyebrow">{{ . }}</p>{{ end }}
+      <h1 class="prj-title">{{ $c.name }}</h1>
+      {{ with $c.longname }}<p class="prj-longname">{{ . }}</p>{{ end }}
+      <dl class="prj-facts">
+        {{ range $c.facts }}<div><dt>{{ .label }}</dt><dd>{{ .value | markdownify }}</dd></div>{{ end }}
+      </dl>
+      {{ with $c.links }}<p class="prj-links">{{ range . }}<a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>{{ end }}</p>{{ end }}
+    </div>
+  </div>
+</div>
+
+<div class="sec-wrap prj-body">
+  {{/* ── About ── */}}
+  {{ with $c.about }}
+    <section class="prj-section"><h2 class="sec-heading">About the project</h2>
+      <div class="prj-about{{ with $c.about_media }} prj-about--media{{ end }}">
+        <div class="prj-prose">{{ . | $page.RenderString }}</div>
+        {{ with $c.about_media }}
+          {{ $poster := "" }}{{ with .poster }}{{ with resources.Get (printf "media/%s" .) }}{{ $poster = (.Resize "900x webp q80").RelPermalink }}{{ end }}{{ end }}
+          <figure class="prj-media">
+            <button type="button" class="prj-dome" aria-label="Play / pause: {{ .caption | plainify }}">
+              <video src="{{ .video | relURL }}" {{ with $poster }}poster="{{ . }}"{{ end }} muted loop playsinline preload="none"></video>
+              <span class="prj-play" aria-hidden="true"></span>
+            </button>
+            {{ with .caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+          </figure>
+          <script>
+            document.querySelectorAll('.prj-dome').forEach(function (b) {
+              var v = b.querySelector('video');
+              b.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
+              v.addEventListener('play', function () { b.classList.add('is-playing'); });
+              v.addEventListener('pause', function () { b.classList.remove('is-playing'); });
+            });
+          </script>
+        {{ end }}
+      </div></section>
+  {{ end }}
+
+  {{/* ── Research questions ── */}}
+  {{ with $c.questions }}
+    <section class="prj-section"><h2 class="sec-heading">Research questions</h2>
+      <ol class="prj-questions">
+        {{ range . }}<li><h3>{{ .title }}</h3><p>{{ .text | markdownify }}</p></li>{{ end }}
+      </ol></section>
+  {{ end }}
+
+  {{/* ── Approach ── */}}
+  {{ with $c.approach }}
+    <section class="prj-section"><h2 class="sec-heading">Approach</h2>
+      <div class="prj-approach">
+        {{ range . }}<div class="prj-approach-item"><h3>{{ .title }}</h3><p>{{ .text | markdownify }}</p></div>{{ end }}
+      </div></section>
+  {{ end }}
+
+  {{/* ── Outputs ── */}}
+  <section class="prj-section" id="outputs"><h2 class="sec-heading">Project outputs</h2>
+    {{/* ── Software (e.g. RELIC) ── */}}
+    {{ with $c.components }}
+      <h3 class="sec-subheading">Software</h3>
+      {{ range . }}
+        {{ $logo := "" }}{{ with .logo }}{{ $logo = resources.Get (printf "media/%s" .) }}{{ end }}
+        <div class="prj-component{{ if not $logo }} prj-component--nologo{{ end }}">
+          {{ with $logo }}{{ $i := .Resize "500x webp q88" }}
+            <img class="prj-component-logo" src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="">
+          {{ end }}
+          <div>
+            {{ with .eyebrow }}<p class="prj-eyebrow-dark">{{ . }}</p>{{ end }}
+            <h4 class="prj-component-title">{{ .name }}</h4>
+            {{ with .longname }}<p class="prj-component-long">{{ . }}</p>{{ end }}
+            <div class="prj-prose">{{ .text | $page.RenderString }}</div>
+            {{ with .links }}<p class="prj-links prj-links--dark">{{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .text }}</a>{{ end }}</p>{{ end }}
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+    {{/* ── Data & visualizations (e.g. interactive 3D scenes accompanying papers) ── */}}
+    {{ with $c.data_products }}
+      <h3 class="sec-subheading">Data &amp; visualizations</h3>
+      {{ range $d := . }}
+        {{ $img := "" }}{{ with $d.image }}{{ $img = resources.Get (printf "media/%s" .) }}{{ end }}
+        <div class="prj-component{{ if not $img }} prj-component--nologo{{ end }}">
+          {{ with $img }}{{ $i := .Resize "700x webp q85" }}
+            <a class="prj-dp-preview" href="{{ $d.url | relURL }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img class="prj-component-logo" src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="" loading="lazy">
+            </a>
+          {{ end }}
+          <div>
+            <h4 class="prj-component-title">{{ $d.name | markdownify }}</h4>
+            {{ with $d.description }}<div class="prj-prose"><p>{{ . | markdownify }}</p></div>{{ end }}
+            {{ with $d.url }}<p class="prj-links prj-links--dark"><a href="{{ . | relURL }}" target="_blank" rel="noopener">{{ $d.link_text | default "View" }}</a></p>{{ end }}
+          </div>
+        </div>
+      {{ end }}
+    {{ end }}
+
+    <h3 class="sec-subheading">Publications</h3>
+    {{ $pubs := where (where site.RegularPages "Section" "publications") "Params.projects" "intersect" (slice $key) }}
+    {{ if $pubs }}
+      <div class="prj-pubs">{{ range $pubs.ByDate.Reverse }}{{ partial "views/citation.html" (dict "item" .) }}{{ end }}</div>
+    {{ end }}
+    {{/* not yet published: same markup as views/citation.html (authors (status). Title. Venue.) */}}
+    {{ with $c.upcoming_publications }}<div class="prj-pubs">{{ range . }}
+      <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+        <span class="article-metadata li-cite-author">{{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<span class="font-bold">M. M. Schulreich</span>{{ else }}{{ $a }}{{ end }}{{ end }}</span>
+        ({{ .status | default "in prep." }}).
+        {{ .title | markdownify }}.{{ with .venue }} {{ . | markdownify }}.{{ end }}
+      </div>{{ end }}</div>{{ end }}
+    {{ if and (not $pubs) (not $c.upcoming_publications) }}<p class="sec-intro">Publications from the project will be listed here.</p>{{ end }}
+
+    {{ $talks := where hugo.Data.talks "project" $key }}
+    {{ if $talks }}
+      <h3 class="sec-subheading">Talks</h3>
+      <ul class="talk-list">{{ range sort $talks "date" "desc" }}{{ partial "talk-item.html" (dict "t" . "now" now "labels" (dict "invited" "Invited" "contributed" "Contributed" "poster" "Poster")) }}{{ end }}</ul>
+    {{ end }}
+  </section>
+
+  {{/* ── Collaboration ── */}}
+  {{ with $c.partners }}
+    <section class="prj-section"><h2 class="sec-heading">Collaboration partners</h2>
+      <ul class="prj-partners">{{ range . }}<li><strong>{{ .name }}</strong><span>{{ .inst }}</span>{{ with .role }}<em>{{ . | markdownify }}</em>{{ end }}</li>{{ end }}</ul></section>
+  {{ end }}
+
+  {{/* ── Funding ── */}}
+  {{ with $c.funding }}<section class="prj-section prj-funding">
+    {{ with $c.funding_logo }}{{ with resources.Get (printf "media/%s" .) }}<a class="prj-funding-logo" href="https://www.fwf.ac.at/" target="_blank" rel="noopener"><img src="{{ .RelPermalink }}" alt="FWF – Austrian Science Fund"></a>{{ end }}{{ end }}
+    <div>{{ . | $page.RenderString }}</div>
+  </section>{{ end }}
+</div>

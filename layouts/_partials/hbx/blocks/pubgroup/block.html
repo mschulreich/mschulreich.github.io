@@ -1,0 +1,17 @@
+{{/* Custom block: pubgroup — publications of one publication_type in the citation view.
+     Unlike the HugoBlox collection block it renders nothing at all when the group is empty
+     (the collection block falls back to listing every publication if the type does not exist yet).
+     content: { title, publication_type } */}}
+{{ $c := .wcBlock.content | default dict }}
+{{ $pubs := slice }}
+{{ range where site.RegularPages "Section" "publications" }}
+  {{ if in (.Params.publication_types | default slice) $c.publication_type }}{{ $pubs = $pubs | append . }}{{ end }}
+{{ end }}
+{{ if $pubs }}
+  <div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6 md:px-0">
+    {{ with $c.title }}<div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">{{ . }}</div>{{ end }}
+  </div>
+  <div class="flex flex-col items-center px-6"><div class="mt-16 sm:mt-20 container max-w-3xl w-full"><div class="flex flex-col space-y-3">
+    {{ range (sort $pubs "Date" "desc") }}{{ partial "views/citation.html" (dict "item" .) }}{{ end }}
+  </div></div></div>
+{{ end }}

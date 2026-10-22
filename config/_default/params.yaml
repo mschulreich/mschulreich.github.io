@@ -1,0 +1,58 @@
+hugoblox:
+  schema: "2.0"
+
+  identity:
+    name: "Michael Schulreich"
+    organization: "University of Vienna"
+    type: person
+    tagline: "Astrophysicist · Supernova archaeology · Local Bubble · Live radionuclides"
+    description: "Astrophysicist studying the interstellar medium across scales: superbubbles, the Local Bubble, supernova archaeology, and ⁶⁰Fe on Earth."
+    social:
+      twitter: ""
+
+  theme:
+    mode: system          # light | dark | system
+    pack: "minimal"       # default | minimal | marine | solar | matcha | contrast | coffee | ...
+    colors:
+      primary: "#6d28d9"     # violet, matches the ORION logo
+      secondary: "#6d28d9"   # same accent for the CV timeline (was GitHub green)
+      neutral: ""
+
+  typography:
+    pack: "academic"      # system | academic | editorial | modern | humanist | geometric | developer
+
+  layout:
+    radius: "md"
+    spacing: "comfortable"
+    avatar_shape: circle
+
+  header:
+    enable: true
+    style: navbar
+    show_logo: true
+    show_title: false   # logo already contains the name
+    sticky: true
+    align: center
+    search: false
+    theme_toggle: true
+
+  footer:
+    style: minimal
+
+  copyright:
+    notice: '© <span class="js-year">{year}</span> Michael M. Schulreich · My ❤️ goes to Maja.'   # {year} = build year; updated to the current year in the browser (hooks/body-end/mail.html)
+
+  content:
+    math:
+      enable: true
+    toc:
+      enable: true
+    reading_time:
+      enable: false
+
+  search:
+    enable: false
+
+  locale:
+    date_format: "Jan 2006"
+    time_format: "15:04"

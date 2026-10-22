@@ -1,0 +1,154 @@
+# Academic presentations (from CV). type: invited | contributed | poster
+# `when` overrides the displayed date (e.g. if the exact day is not fixed yet).
+# Optional per talk: title (or titles: [...] for several posters), url (event page), slides (PDF in static/ or URL), video,
+#   note (extra badge), label (replaces the type badge, e.g. "Two posters"), project (e.g. orion)
+- date: 2027-05-01
+  when: May 2027
+  type: invited
+  title: TBD
+  event: 'Workshop "The Galactic Journey of the Solar System: Astronomical, Geological, and Paleo-Climatological Perspectives"'
+  place: Garching, Germany
+  project: orion
+- date: 2025-03-06
+  type: invited
+  title: 'The supernova link between the Local Bubble and deep-sea radioisotopes'
+  event: DAWN Cake Talks
+  place: Copenhagen, Denmark
+- date: 2024-07-05
+  type: contributed
+  title: 'The radioisotopic imprint of the Local Superbubble on the Earth and beyond'
+  event: European Astronomical Society Annual Meeting (EAS 2024)
+  place: Padova, Italy
+- date: 2024-03-07
+  type: contributed
+  title: 'The supernova link between the Local Bubble and deep-sea radioisotopes'
+  event: 19th Russbach School on Nuclear Astrophysics
+  place: Russbach, Austria
+- date: 2023-10-18
+  type: invited
+  title: 'The supernova link between the Local Bubble and deep-sea radioisotopes'
+  event: Online seminar of IAU Commission H1 "The Local Universe"
+  place: Online
+  video: https://www.youtube.com/watch?v=FKT84xH7Hhk
+- date: 2023-10-11
+  type: invited
+  title: 'The supernova link between the Local Bubble and deep-sea radioisotopes'
+  event: Workshop "Supernova Remnants in Complex Environments"
+  place: Leiden, Netherlands
+- date: 2023-09-14
+  type: invited
+  title: 'The supernova link between the Local Bubble and deep-sea radioisotopes'
+  note: Plenary talk
+  event: 96th Annual Meeting of the German Astronomical Society (AG 2023)
+  place: Berlin, Germany
+- date: 2023-03-09
+  type: invited
+  title: 'Numerical studies on the link between radioisotopic signatures on Earth and the formation of the Local Bubble'
+  event: Seminar of the Interstellar Medium Group, Space Telescope Science Institute
+  place: Baltimore, USA
+- date: 2020-09-24
+  type: contributed
+  title: 'Rayleigh–Taylor-unstable astrophysical fluid flows'
+  event: 93rd Annual Meeting of the German Astronomical Society
+  place: Online
+- date: 2018-12-12
+  type: invited
+  title: 'Simulations of the Local Superbubble'
+  event: Workshop "Searching for the Sources of Galactic Cosmic Rays"
+  place: Paris, France
+- date: 2018-06-06
+  type: invited
+  title: 'Reconstructing the origin of the Local Bubble and Loop I via radioisotopic signatures on Earth'
+  event: Seminar at the Erlangen Centre for Astroparticle Physics
+  place: Erlangen, Germany
+- date: 2018-03-05
+  type: invited
+  title: 'Shock Waves Inside the Local Bubble'
+  event: Workshop "Astrophysical Shocks"
+  place: Potsdam, Germany
+- date: 2017-10-23
+  type: invited
+  title: 'Reconstructing the origin of the Local Bubble and Loop I via radioisotopic signatures on Earth'
+  event: 'Workshop "Three Elephants in the Gamma-Ray Sky: Loop I, the *Fermi* Bubbles, and the Galactic Center Excess"'
+  place: Garmisch-Partenkirchen, Germany
+- date: 2017-01-25
+  type: contributed
+  title: 'Gas dynamics of the (local) interstellar medium, particularly the origin of the Local Bubble, and propagation and acceleration of cosmic rays'
+  event: Workshop "Physics of the Interstellar Medium"
+  place: Berlin, Germany
+- date: 2016-12-09
+  type: invited
+  title: 'Supernovae and the Local Bubble'
+  event: Workshop "Sources of Galactic Cosmic Rays"
+  place: Paris, France
+- date: 2016-09-14
+  type: contributed
+  title: 'Assessing the link between recent supernovae near Earth and the iron-60 anomaly in a deep-sea crust'
+  event: 89th Annual Meeting of the German Astronomical Society
+  place: Bochum, Germany
+- date: 2016-06-09
+  type: contributed
+  title: 'Assessing the link between recent supernovae near Earth and the iron-60 anomaly in a deep-sea crust'
+  event: 'Conference "Supernova Remnants: An Odyssey in Space After Stellar Death"'
+  place: Chania, Crete, Greece
+- date: 2015-02-20
+  type: contributed
+  title: 'Investigating the link between an iron-60 anomaly in the deep ocean''s crust and the origin of the Local Bubble'
+  event: 4th Potsdam–Berlin Astronomical Colloquium
+  place: Potsdam, Germany
+- date: 2014-11-10
+  type: invited
+  title: 'The Local Bubble'
+  event: Workshop "Superbubbles, HI Holes and Supershells"
+  place: Freising, Germany
+- date: 2014-03-19
+  type: contributed
+  title: 'Tracing back the Local Bubble''s formation from isotopic anomalies in the deep ocean crust'
+  event: 78th Annual Meeting and Spring Meeting of the German Physical Society
+  place: Berlin, Germany
+- date: 2013-09-24
+  when: Sep 24–27, 2013
+  type: poster
+  title: 'Tracing back the Local Bubble''s formation from isotopic anomalies in the deep ocean crust'
+  event: 86th Annual Meeting of the German Astronomical Society
+  place: Tübingen, Germany
+- date: 2013-03-12
+  type: contributed
+  title: 'Investigating the link between an iron-60 anomaly in the deep ocean''s crust and the origin of the Local Bubble'
+  event: '527th WE-Heraeus Seminar "Plasma and Radiation Environment in Astrospheres and Implications for the Habitability of Extrasolar Planets"'
+  place: Bad Honnef, Germany
+- date: 2013-02-25
+  type: contributed
+  title: 'Investigating the link between an iron-60 anomaly in the deep ocean''s crust and the origin of the Local Bubble'
+  event: Spring Meeting of the German Physical Society
+  place: Jena, Germany
+- date: 2012-09-25
+  type: contributed
+  title: 'Investigating the link between an iron-60 anomaly in the deep ocean''s crust and the origin of the Local Bubble'
+  event: 85th Annual Meeting of the German Astronomical Society
+  place: Hamburg, Germany
+- date: 2012-09-21
+  type: contributed
+  title: 'Investigating the link between an iron-60 anomaly in the deep ocean''s crust and the origin of the Local Bubble'
+  event: Workshop "Hot Plasmas in Laboratory and Space"
+  place: Berlin, Germany
+- date: 2011-09-19
+  when: Sep 19–23, 2011
+  type: poster
+  label: Two posters
+  titles:
+    - Bow Shock Waves in Groups and Clusters of Galaxies
+    - Turbulent Mixing of <sup>60</sup>Fe in the Local Interstellar Medium
+  event: 84th Annual Meeting of the German Astronomical Society
+  place: Heidelberg, Germany
+- date: 2009-09-23
+  type: contributed
+  title: 'Astrophysical bow shock waves – Comparison of analytical and numerical models'
+  event: 82nd Annual Meeting of the German Astronomical Society
+  place: Potsdam, Germany
+- date: 2009-09-03
+  type: invited
+  title: 'Astrophysical bow shock waves – Comparison of analytical and numerical models'
+  note: Diploma Thesis Award talk
+  event: Joint Annual Meeting of the Swiss Physical Society, Austrian Physical Society, and Austrian Society for Astronomy and Astrophysics
+  place: Innsbruck, Austria

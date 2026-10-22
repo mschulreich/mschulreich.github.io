@@ -1,0 +1,59 @@
+{{/* Custom block: pubcards
+     Selected publications as cards (3 columns on desktop).
+     Shows pages from content/publications/ with `featured: true`, newest first.
+     Card image: `featured.{jpg,png,webp}` in the publication's folder (optional).
+
+     content:
+       title: Selected Publications
+       count: 9
+       archive: { text: All publications, link: publications/ }
+*/}}
+{{ $page := .wcPage }}
+{{ $content := .wcBlock.content | default dict }}
+{{ $pubs := where (where site.RegularPages "Section" "publications") "Params.featured" true }}
+{{ $pubs = first ($content.count | default 9) $pubs.ByDate.Reverse }}
+
+<div class="pubcards-wrap">
+  {{ with $content.title }}<h2 class="pubcards-heading">{{ . }}</h2>{{ end }}
+  <div class="pubcards-grid">
+    {{ range $pubs }}
+      {{ $p := . }}
+      {{ $pub := .Params.publication | default dict }}
+      {{ $img := (.Resources.GetMatch "featured.*") }}
+      <article class="pubcard">
+        <a class="pubcard-media" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+          {{ with $img }}
+            {{ $i := .Fill "1200x750 Center webp q82" }}
+            <img src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="" loading="lazy">
+          {{ else }}
+            <span class="pubcard-placeholder">{{ $pub.name }}</span>
+          {{ end }}
+        </a>
+        <div class="pubcard-body">
+          <p class="pubcard-venue">{{ $pub.name }} · {{ .Date.Format "2006" }}</p>
+          <h3 class="pubcard-title"><a href="{{ .RelPermalink }}">{{ (.Params.title_html | default .Title) | safeHTML }}</a></h3>
+          <p class="pubcard-authors">
+            {{- $authors := .Params.authors | default slice -}}
+            {{- $n := len $authors -}}
+            {{- range $i, $a := first 3 $authors -}}
+              {{- if $i }}, {{ end -}}
+              {{- if eq $a "me" }}<strong>M. M. Schulreich</strong>{{ else }}{{ $a }}{{ end -}}
+            {{- end -}}
+            {{- if gt $n 3 }}, et al.{{ end -}}
+            {{- /* make sure "me" is visible even beyond the first three */ -}}
+            {{- if and (gt $n 3) (not (in (first 3 $authors) "me")) (in $authors "me") }} (incl. <strong>M. M. Schulreich</strong>){{ end -}}
+          </p>
+          {{ with .Params.summary }}<p class="pubcard-summary">{{ . | markdownify }}</p>{{ end }}
+          <p class="pubcard-links">
+            {{ with .Params.hugoblox.ids.doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+            {{ with .Params.hugoblox.ids.arxiv }}<a href="https://arxiv.org/abs/{{ . }}" target="_blank" rel="noopener">arXiv</a>{{ end }}
+            {{ range .Params.links }}{{ if eq .label "ADS" }}<a href="{{ .url }}" target="_blank" rel="noopener">ADS</a>{{ end }}{{ end }}
+          </p>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+  {{ with $content.archive }}
+    <p class="pubcards-archive"><a href="{{ .link | relLangURL }}">{{ .text | default "All publications" }} →</a></p>
+  {{ end }}
+</div>

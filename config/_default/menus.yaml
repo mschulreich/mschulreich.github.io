@@ -1,0 +1,55 @@
+main:
+  - name: About
+    url: /#about
+    weight: 10
+  - name: Publications
+    identifier: publications
+    url: /#publications
+    weight: 20
+  - name: Selected
+    identifier: publications-selected
+    parent: publications
+    url: /#publications
+    weight: 1
+  - name: All
+    identifier: publications-all
+    parent: publications
+    url: /publications/
+    weight: 2
+  - name: Projects
+    url: /#projects
+    weight: 30
+  - name: Talks
+    identifier: talks
+    url: /#talks
+    weight: 40
+  - name: Recent
+    identifier: talks-recent
+    parent: talks
+    url: /#talks
+    weight: 1
+  - name: All
+    identifier: talks-all
+    parent: talks
+    url: /talks/
+    weight: 2
+  - name: Teaching
+    url: /#teaching
+    weight: 50
+  - name: Service
+    identifier: service
+    url: /#service
+    weight: 60
+  - name: Academic
+    identifier: service-academic
+    parent: service
+    url: /#service
+    weight: 1
+  - name: Outreach
+    identifier: service-outreach
+    parent: service
+    url: /#outreach
+    weight: 2
+  - name: Contact
+    url: /#contact
+    weight: 70

@@ -1,0 +1,66 @@
+{{/* Custom block: about
+     One section: short bio + photo, research-interest chips, then Positions | Education.
+     Bio, interests, experience and education all come from the author profile (data/authors/).
+
+     content:
+       username: me
+       title: About
+       image: about.jpg          # in assets/media/
+       image_alt: ''
+       interests_title: Research Interests
+     design:
+       date_format: 'Jan 2006'   # passed to the embedded resume-experience block
+*/}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content | default dict }}
+{{ $design := $block.design | default dict }}
+{{ $username := $content.username | default "me" }}
+{{ $profile := partial "functions/get_author_profile" $username }}
+
+<div class="about-wrap">
+  {{ with $content.title }}<h2 class="about-heading">{{ . }}</h2>{{ end }}
+
+  {{/* 1 — bio + photo */}}
+  <div class="about-intro">
+    <div class="about-bio">{{ $profile.bio | $page.RenderString }}</div>
+    {{ with $content.image }}
+      {{ with resources.Get (printf "media/%s" .) }}
+        {{ $img := .Resize "900x webp q85" }}
+        <figure class="about-photo">
+          <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+               alt="{{ $content.image_alt | default $profile.name.display }}" loading="lazy">
+        </figure>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{/* 2 — research interests as chips */}}
+  {{ with $profile.interests }}
+  <div class="about-interests">
+    <h3 class="about-subheading">{{ $content.interests_title | default "Research Interests" }}</h3>
+    <ul class="about-chips">
+      {{ range . }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  </div>
+  {{ end }}
+
+  {{/* 2b — methods & tools: grouped plain lists, no ratings; only shown with content.show_tools: true */}}
+  {{/* read directly from data/authors/<user>.yaml (the profile helper only passes known fields) */}}
+  {{ if $content.show_tools }}{{ with (index (hugo.Data.authors | default dict) $username).tools }}
+  <div class="about-tools">
+    <h3 class="about-subheading">{{ $content.tools_title | default "Methods & Tools" }}</h3>
+    <dl class="about-tools-list">
+      {{ range . }}<div><dt>{{ .group }}</dt><dd>{{ range $i, $it := .items }}{{ if $i }} · {{ end }}{{ if reflect.IsMap $it }}{{ with $it.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $it.name }}</a>{{ else }}{{ $it.name }}{{ end }}{{ else }}{{ $it }}{{ end }}{{ end }}</dd></div>{{ end }}
+    </dl>
+  </div>
+  {{ end }}{{ end }}
+</div>
+
+{{/* 3 — Positions | Education: reuse the HugoBlox resume-experience block */}}
+<div id="cv" class="about-cv">
+  {{ partial "hbx/blocks/resume-experience/block.html" (dict
+      "wcPage" $page
+      "wcBlock" (dict "content" (dict "username" $username) "design" (dict "date_format" ($design.date_format | default "Jan 2006")))
+      "wcIdentifier" "cv") }}
+</div>

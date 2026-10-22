@@ -1,0 +1,6 @@
+{{/* Override of HugoBlox get_summary (used for <meta name="description"> and og:description).
+     Same priority (summary > description > abstract > .Summary), but Markdown/HTML is rendered and
+     stripped, so search snippets show "Gaia" and "60Fe" instead of "*Gaia*" or "<sup>60</sup>Fe". */}}
+{{ $summary := .Params.summary | default .Params.description | default .Params.abstract | default .Summary }}
+{{ $summary = $summary | markdownify | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+{{ return $summary }}

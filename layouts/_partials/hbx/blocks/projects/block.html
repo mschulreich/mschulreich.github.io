@@ -1,0 +1,23 @@
+{{/* Custom block: projects — teaser cards linking to project pages
+     content: title, items: [{name, subtitle, logo (assets/media/...), text, meta, link, link_text}]
+*/}}
+{{ $c := .wcBlock.content | default dict }}
+<div class="sec-wrap">
+  {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  {{ range $c.items }}
+    <article class="proj-card">
+      {{ $logo := resources.Get (printf "media/%s" .logo) }}
+      <a class="proj-media" href="{{ .link | relLangURL }}" tabindex="-1" aria-hidden="true">
+        {{ with $logo }}{{ $i := .Resize "800x webp q85" }}<img src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="" loading="lazy">{{ end }}
+      </a>
+      <div class="proj-body">
+        {{ with .meta }}<p class="proj-meta">{{ . }}</p>{{ end }}
+        <h3 class="proj-title"><a href="{{ .link | relLangURL }}">{{ .name }}</a></h3>
+        {{ with .subtitle }}<p class="proj-subtitle">{{ . }}</p>{{ end }}
+        {{ with .text }}<div class="proj-text">{{ . | markdownify }}</div>{{ end }}
+        <p class="proj-cta"><a href="{{ .link | relLangURL }}">{{ .link_text | default "Project page" }} →</a></p>
+        {{ with .funder_logo }}{{ with resources.Get (printf "media/%s" .) }}<p class="proj-funder"><span>Funded by</span><img src="{{ .RelPermalink }}" alt="FWF – Austrian Science Fund"></p>{{ end }}{{ end }}
+      </div>
+    </article>
+  {{ end }}
+</div>
