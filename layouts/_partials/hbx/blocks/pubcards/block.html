@@ -44,13 +44,8 @@
             {{- if and (gt $n 3) (not (in (first 3 $authors) "me")) (in $authors "me") }} (incl. <strong>M. M. Schulreich</strong>){{ end -}}
           </p>
           {{ with .Params.summary }}<p class="pubcard-summary">{{ . | markdownify }}</p>{{ end }}
-          <p class="pubcard-links">
-            {{ with .Params.hugoblox.ids.doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
-            {{ with .Params.hugoblox.ids.arxiv }}<a href="https://arxiv.org/abs/{{ . }}" target="_blank" rel="noopener">arXiv</a>{{ end }}
-            {{ range .Params.links }}{{ if eq .label "ADS" }}<a href="{{ .url }}" target="_blank" rel="noopener">ADS</a>{{ end }}{{ end }}
-            {{/* further links of the page (e.g. Movies, 3D scene); internal ones open in the same tab */}}
-            {{ range .Params.links }}{{ if and .label (ne .label "ADS") }}{{ if (urls.Parse .url).Scheme }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ else }}<a href="{{ .url | relURL }}">{{ .label }}</a>{{ end }}{{ end }}{{ end }}
-          </p>
+          {{/* same link row as in the publication list (order, labels, Cite button) */}}
+          <div class="pubcard-links">{{ partial "page_links" (dict "page" . "is_list" 1) }}</div>
         </div>
       </article>
     {{ end }}
