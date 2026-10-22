@@ -31,7 +31,7 @@ sections:
       title: About
       image: about.jpg
       image_alt: Michael M. Schulreich at a blackboard with the equations of hydrodynamics
-      interests_title: Research Interests
+      interests_title: Research interests
       show_tools: false          # "Methods & Tools" (data/authors/me.yaml → tools); true to show
     design:
       date_format: 'Jan 2006'
@@ -40,7 +40,7 @@ sections:
   - block: pubcards
     id: publications
     content:
-      title: Selected Publications
+      title: Selected publications
       count: 9
       archive:
         text: All publications
@@ -65,7 +65,7 @@ sections:
   - block: talks
     id: talks
     content:
-      title: Recent & Upcoming Talks
+      title: Recent & upcoming talks
       mode: recent
       count: 5
       archive:

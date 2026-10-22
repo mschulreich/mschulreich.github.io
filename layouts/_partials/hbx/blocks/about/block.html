@@ -7,7 +7,7 @@
        title: About
        image: about.jpg          # in assets/media/
        image_alt: ''
-       interests_title: Research Interests
+       interests_title: Research interests
      design:
        date_format: 'Jan 2006'   # passed to the embedded resume-experience block
 */}}
@@ -38,7 +38,7 @@
   {{/* 2 — research interests as chips */}}
   {{ with $profile.interests }}
   <div class="about-interests">
-    <h3 class="about-subheading">{{ $content.interests_title | default "Research Interests" }}</h3>
+    <h3 class="about-subheading">{{ $content.interests_title | default "Research interests" }}</h3>
     <ul class="about-chips">
       {{ range . }}<li>{{ . }}</li>{{ end }}
     </ul>
