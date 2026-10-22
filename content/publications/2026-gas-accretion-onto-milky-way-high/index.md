@@ -22,6 +22,10 @@ links:
   - type: source
     url: https://ui.adsabs.harvard.edu/abs/2026MNRAS.551g1405S
     label: ADS
+  - type: video
+    url: /publications/2026-gas-accretion-onto-milky-way-high/#movies
+    label: Movies
+    icon: hero/play-circle
 # SciX/ADS bibcode: 2026MNRAS.551g1405S
 ---
 

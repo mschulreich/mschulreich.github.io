@@ -48,6 +48,8 @@
             {{ with .Params.hugoblox.ids.doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
             {{ with .Params.hugoblox.ids.arxiv }}<a href="https://arxiv.org/abs/{{ . }}" target="_blank" rel="noopener">arXiv</a>{{ end }}
             {{ range .Params.links }}{{ if eq .label "ADS" }}<a href="{{ .url }}" target="_blank" rel="noopener">ADS</a>{{ end }}{{ end }}
+            {{/* further links of the page (e.g. Movies, 3D scene); internal ones open in the same tab */}}
+            {{ range .Params.links }}{{ if and .label (ne .label "ADS") }}{{ if (urls.Parse .url).Scheme }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ else }}<a href="{{ .url | relURL }}">{{ .label }}</a>{{ end }}{{ end }}{{ end }}
           </p>
         </div>
       </article>

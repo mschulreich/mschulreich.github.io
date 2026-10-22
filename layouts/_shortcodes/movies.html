@@ -1,5 +1,5 @@
-{{/* Grid of simulation movies: {{< movies title="Simulation movies" intro="..." >}} {{< movie ... >}} … {{< /movies >}} */}}
-<section class="movies">
+{{/* Grid of simulation movies: {{< movies title="Simulation movies" intro="..." [id="movies"] >}} {{< movie ... >}} … {{< /movies >}} */}}
+<section class="movies" id="{{ .Get "id" | default "movies" }}">
   {{ with .Get "title" }}<h2 class="movies-title">{{ . }}</h2>{{ end }}
   {{ with .Get "intro" }}<p class="movies-intro">{{ . | markdownify }}</p>{{ end }}
   <div class="movies-grid">{{ .Inner }}</div>
