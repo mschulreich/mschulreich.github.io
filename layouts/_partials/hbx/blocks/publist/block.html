@@ -1,0 +1,24 @@
+{{/* Custom block: publist — full publication list in the same layout as the Talks page
+     (left-aligned, content width, group headings with counts; empty groups are skipped).
+     content:
+       title: Publications
+       intro: markdown
+       groups: [{ title, publication_type, id }]   # publication_type as in the CSL types of the pages
+*/}}
+{{ $page := .wcPage }}
+{{ $c := .wcBlock.content | default dict }}
+{{ $all := where site.RegularPages "Section" "publications" }}
+<div class="sec-wrap">
+  {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  {{ with $c.intro }}<div class="sec-intro">{{ . | $page.RenderString }}</div>{{ end }}
+  {{ range $g := $c.groups }}
+    {{ $pubs := slice }}
+    {{ range $all }}{{ if in (.Params.publication_types | default slice) $g.publication_type }}{{ $pubs = $pubs | append . }}{{ end }}{{ end }}
+    {{ if $pubs }}
+      <h3 class="sec-subheading"{{ with $g.id }} id="{{ . }}"{{ end }}>{{ $g.title }} <span class="sec-count">{{ len $pubs }}</span></h3>
+      <ul class="pub-rows">
+        {{ range sort $pubs "Date" "desc" }}<li class="pub-row">{{ partial "views/citation.html" (dict "item" .) }}</li>{{ end }}
+      </ul>
+    {{ end }}
+  {{ end }}
+</div>
