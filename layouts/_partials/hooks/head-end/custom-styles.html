@@ -49,14 +49,19 @@
   #site-header .nav-link, #site-header .nav-dropdown-link, #site-header div:has(> .theme-toggle) {
     color: #24292f !important; transition: color .15s; }
   html.dark #site-header .nav-link, html.dark #site-header .nav-dropdown-link, html.dark #site-header div:has(> .theme-toggle) { color: #f0f6fc !important; }
+  /* hover colours only on devices with a real pointer: on touch screens :hover sticks after a tap */
+  @media (hover: hover) {
   #site-header .nav-link:hover, #site-header .nav-dropdown-link:hover, #site-header div:has(> .theme-toggle):hover { color: var(--link) !important; }
   html.dark #site-header .nav-link:hover, html.dark #site-header .nav-dropdown-link:hover, html.dark #site-header div:has(> .theme-toggle):hover { color: var(--link) !important; }
+  }
   /* transparent header over the splash: white, like the logo there */
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked)) .nav-link,
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked)) div:has(> .theme-toggle) { color: #fff !important; }
   /* over the dark photo: the light (dark-mode) violet stays readable in both modes */
+  @media (hover: hover) {
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked)) .nav-link:hover,
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked)) div:has(> .theme-toggle):hover { color: var(--color-primary-400) !important; }
+  }
 
   /* dark-mode toggle: same colours as the menu links, flush with the right content edge */
   /* desktop only (no burger icon next to it): pull the moon/sun flush with the right content edge */
