@@ -71,8 +71,12 @@
 
   {{/* ── Outputs ── */}}
   <section class="prj-section" id="outputs"><h2 class="sec-heading">Project outputs</h2>
+    {{/* Entries with `publish_date` in the future are left out until a build after that date
+         (like future-dated pages; the site is rebuilt weekly). */}}
+    {{ $components := slice }}{{ range $c.components }}{{ if or (not .publish_date) (not ((time .publish_date).After now)) }}{{ $components = $components | append . }}{{ end }}{{ end }}
+    {{ $products := slice }}{{ range $c.data_products }}{{ if or (not .publish_date) (not ((time .publish_date).After now)) }}{{ $products = $products | append . }}{{ end }}{{ end }}
     {{/* ── Software (e.g. RELIC) ── */}}
-    {{ with $c.components }}
+    {{ with $components }}
       <h3 class="sec-subheading">Software</h3>
       {{ range . }}
         {{ $logo := "" }}{{ with .logo }}{{ $logo = resources.Get (printf "media/%s" .) }}{{ end }}
@@ -91,7 +95,7 @@
       {{ end }}
     {{ end }}
     {{/* ── Data & visualizations (e.g. interactive 3D scenes accompanying papers) ── */}}
-    {{ with $c.data_products }}
+    {{ with $products }}
       <h3 class="sec-subheading">Data &amp; visualizations</h3>
       {{ range $d := . }}
         {{ $img := "" }}{{ with $d.image }}{{ $img = resources.Get (printf "media/%s" .) }}{{ end }}

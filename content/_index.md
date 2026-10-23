@@ -56,7 +56,10 @@ sections:
           subtitle: Origins of Radionuclides In Our Neighborhood
           meta: FWF Principal Investigator Project · University of Vienna · 2027–2031
           logo: projects/orion-logo.jpg
-          text: Which supernovae shaped the Sun's cosmic neighborhood — the Local Bubble and the superbubbles around it — and when did their debris reach the Earth? ORION combines 3D magnetohydrodynamic simulations of interacting superbubbles with *Gaia*-based reconstructions of nearby star clusters to explain the live radionuclides found on Earth and the Moon. The open-source framework RELIC reconstructs the underlying supernova histories.
+          text: Which supernovae shaped the Sun's cosmic neighborhood — the Local Bubble and the superbubbles around it — and when did their debris reach the Earth? ORION combines 3D magnetohydrodynamic simulations of interacting superbubbles with *Gaia*-based reconstructions of nearby star clusters to explain the live radionuclides found on Earth and the Moon.
+          # shown from the RELIC submission on (needs a rebuild after that date)
+          text_extra: The open-source framework RELIC reconstructs the underlying supernova histories.
+          text_extra_date: 2027-02-01
           link: orion/
           link_text: Project page
           funder_logo: projects/fwf-logo.svg

@@ -1,9 +1,13 @@
 {{/* Light e-mail protection: addresses are stored base64-encoded in data-m and only turned
      into a mailto link in the browser, so simple harvesting bots do not find them in the HTML. */}}
+{{/* Interim address (params.yaml → email_interim): shown instead of every address on the page
+     until the given date (Vienna time), decided in the visitor's browser, so no rebuild is needed. */}}
 <script>
+  {{ with site.Params.email_interim }}var mailInterim = { m: atob('{{ base64Encode .address }}'), until: new Date('{{ .until }}T00:00:00+01:00') };{{ else }}var mailInterim = null;{{ end }}
   document.querySelectorAll('a.js-mail[data-m]').forEach(function (a) {
     try {
       var m = atob(a.getAttribute('data-m'));
+      if (mailInterim && new Date() < mailInterim.until) m = mailInterim.m;
       a.href = 'mailto:' + m;
       if (a.hasAttribute('data-show')) a.textContent = m;
     } catch (e) {}

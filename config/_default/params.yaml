@@ -56,3 +56,9 @@ hugoblox:
   locale:
     date_format: "Jan 2006"
     time_format: "15:04"
+
+# E-mail shown until the University of Vienna address becomes valid (switch happens in the
+# visitor's browser at midnight Vienna time; delete this block afterwards)
+email_interim:
+  address: schulreich@astro.physik.tu-berlin.de
+  until: '2027-02-01'

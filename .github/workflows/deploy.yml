@@ -6,6 +6,10 @@ on:
     branches: ['main']
   # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
+  # Weekly rebuild (Mondays 04:17 UTC) so that date-dependent content updates by itself:
+  # future-dated pages and entries appear, "Upcoming" badges disappear after the event
+  schedule:
+    - cron: '17 4 * * 1'
 
 # Provide permission to clone the repo and deploy it to GitHub Pages
 permissions:
