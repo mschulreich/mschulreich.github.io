@@ -105,6 +105,8 @@ pagination:
   pagerSize: 10
 enableEmoji: true
 enableRobotsTXT: true
+# no automatic overview pages for tags, categories, authors, publication types (unused, would be indexed)
+disableKinds: [taxonomy, term]
 footnotereturnlinkcontents: <sup>^</sup>
 ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 disableAliases: true
