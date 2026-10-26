@@ -21,7 +21,8 @@
     {{ range $type := slice "invited" "contributed" "poster" }}
       {{ $group := where $talks "type" $type }}
       {{ if $group }}
-        <h3 class="sec-subheading">{{ index (dict "invited" "Invited talks" "contributed" "Contributed talks" "poster" "Posters") $type }} <span class="sec-count">{{ len $group }}</span></h3>
+        {{/* count: an entry with `titles` (e.g. two posters at one meeting) counts once per title */}}
+        <h3 class="sec-subheading">{{ index (dict "invited" "Invited talks" "contributed" "Contributed talks" "poster" "Posters") $type }} <span class="sec-count">{{ $n := 0 }}{{ range $group }}{{ $n = add $n (len (.titles | default (slice 1))) }}{{ end }}{{ $n }}</span></h3>
         <ul class="talk-list">
           {{ range $group }}{{ partial "talk-item.html" (dict "t" . "now" $now "labels" $labels) }}{{ end }}
         </ul>
