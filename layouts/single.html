@@ -71,6 +71,10 @@
 
       {{ $display_date := .Params.event_start | default .Date }}
       <div class="mt-4 mb-16">
+      {{ if eq .Type "publications" }}
+      {{/* publication pages: author line as in the publication lists (no date: the year is shown with the venue) */}}
+      <p class="pub-authors-line">{{ partial "page_metadata_authors" . }}</p>
+      {{ else }}
       <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2">
         {{- if $display_date | and (.Params.show_date | default true) -}}
         <span class="mr-1">{{- (time $display_date) | time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") -}}</span>
@@ -142,6 +146,7 @@
         </span>
         {{ end }}
         </div>
+      {{ end }}
 
         <div class="mt-3">
           {{ partial "page_links_div.html" . }}
@@ -272,7 +277,8 @@
 
         {{ if not $pub.is_empty }}
           <div class="font-bold text-2xl">{{ i18n "publication" }}</div>
-          <div class="pub-venue-full">{{ $pub.display | markdownify }}{{ with $pub.publisher }}. {{ . | markdownify }}{{ end }}</div>
+          {{/* year in parentheses as in the publication lists; not for submitted manuscripts */}}
+          <div class="pub-venue-full">{{ $pub.display | markdownify }}{{ with $pub.publisher }}. {{ . | markdownify }}{{ end }}{{ if not (in (.Params.publication_types | default slice) "manuscript") }} ({{ (time (.Params.event_start | default .Date)).Format "2006" }}){{ end }}</div>
         {{ end }}
 
         {{/* Work-level flags — independent of whether a venue is set, so preprints can still surface OA/peer-review status. */}}
@@ -352,12 +358,17 @@
         {{ .Content }}
       </div>
 
-      {{ partial "components/last-edited.html" . }}
+      {{ if ne .Type "publications" }}{{ partial "components/last-edited.html" . }}{{ end }}{{/* "Last updated" says nothing about a paper */}}
 
+      {{ if eq .Type "publications" }}
+      {{/* publication pages: back to the list instead of a chronological previous/next navigation */}}
+      <p class="sec-archive pub-back"><a href="{{ "publications/" | relLangURL }}">← All publications</a></p>
+      {{ else }}
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         {{ .Scratch.Set "invert_pager" true }}
         {{ partial "page_footer" . }}
       </div>
+      {{ end }}
 
     </main>
   </article>
