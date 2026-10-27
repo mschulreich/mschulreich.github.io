@@ -477,4 +477,12 @@
   /* small action links (talks: Slides/Video; outreach: Open on YouTube) like the publication link row */
   .talk-link, .out-card-link { font-size: .75rem; font-weight: 600; letter-spacing: .025em; text-transform: uppercase; }
   .action-icon { display: inline-block; height: 1em; width: 1em; vertical-align: -.15em; margin-right: .25em; }
+  /* section heading spacing, one rule for the whole site:
+     heading -> intro text 20 px (intro belongs to the heading), heading -> content 32 px */
+  #about .about-heading { margin-bottom: 1.7rem; }                 /* bio text has a tall line height */
+  #publications .pubcards-heading { margin-bottom: 2rem; }
+  .sec-heading + .sec-subheading { margin-top: 0; }                 /* e.g. Academic service -> Conference organization */
+  .out-intro { margin-top: -1rem; }                                  /* Outreach intro like the other intros */
+  .out-text { font-size: 1.05rem; line-height: 1.7; opacity: .85; }
+  .contact-wrap .contact-grid { margin-top: -1rem; }
 </style>
