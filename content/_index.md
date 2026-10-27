@@ -133,7 +133,7 @@ sections:
       text: Questions about my research, collaborations, or the ORION project are welcome.
       email: michael.schulreich@univie.ac.at
       address:
-        - '[Department of Astrophysics](https://astro.univie.ac.at)'
+        - Department of Astrophysics
         - University of Vienna
         - Türkenschanzstraße 17
         - 1180 Vienna, Austria
