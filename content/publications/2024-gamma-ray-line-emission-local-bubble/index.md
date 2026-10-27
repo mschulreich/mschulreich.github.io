@@ -26,4 +26,5 @@ links:
     url: https://ui.adsabs.harvard.edu/abs/2024A%26A...689A...2S
     label: ADS
 # SciX/ADS bibcode: 2024A&A...689A...2S
+figure_crop: "1600x520"   # figure on the paper page without the white padding of featured.jpg (cards keep the padded 16:10 image)
 ---

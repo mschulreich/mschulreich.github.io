@@ -20,7 +20,7 @@
   {{ partial "components/sidebar.html" (dict "context" . "no_sidebar" true) }}
   {{ partial "components/toc.html" . }}
   <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-    <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+    <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12{{ if eq .Type "publications" }} pub-page{{ end }}">
 
       {{ if .Params.show_breadcrumb }}
       <div class="mb-4">
@@ -160,6 +160,9 @@
 
 
       {{ $featured := partial "functions/get_featured_image.html" . }}
+      {{/* optional `figure_crop: "WxH"` (front matter): show the figure without the white padding that
+           featured.jpg has for the 16:10 cards; the padding is symmetric, so a centred crop suffices */}}
+      {{ with .Params.figure_crop }}{{ with $featured }}{{ $featured = .Crop (printf "%s Center" $.Params.figure_crop) }}{{ end }}{{ end }}
       {{ $image_params := partial "functions/get_page_image_params.html" . }}
       {{/* Featured image layout */}}
       {{ if and $featured (not $image_params.preview_only) }}
@@ -242,8 +245,9 @@
       {{/* EVENT / PUBLICATION METADATA */}}
       {{ $pub := partial "functions/resolve_publication.html" . }}
       {{ if .Params.abstract | or (eq .Type "publications") | or (eq .Type "events") }}
-        <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
-
+        <div class="pub-meta max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
+        {{/* publication pages: abstract (left column) and facts (right column, below the image), see custom-styles */}}
+        <div class="pub-abstract">
         {{ if .Params.abstract }}
           <div class="font-bold text-2xl">{{ i18n "abstract" }}</div>
           <div>{{ .Params.abstract | markdownify }}</div>
@@ -252,6 +256,8 @@
           <div class="font-bold text-2xl">Summary</div>
           <div>{{ .Params.summary | markdownify }}</div>
         {{ end }}
+        </div>
+        <div class="pub-facts">
 
         {{/* If the type is Uncategorized, hide the type. */}}
         {{ if $pub_type_display }}
@@ -332,7 +338,7 @@
             {{end}}
           </div>
         {{ end }}
-
+        </div>
       </div>
       {{ end }}
 

@@ -486,4 +486,35 @@
   .out-intro { margin-top: -1rem; }                                  /* Outreach intro like the other intros */
   .out-text { font-size: 1.05rem; line-height: 1.7; opacity: .85; }
   .contact-wrap .contact-grid { margin-top: -1rem; }
+  /* ── Publication pages: left-aligned like all other pages ──
+     title and links full width; abstract on the left (reading width), image and facts on the right;
+     the content (e.g. Simulation movies) full width below. Stacks into one column on small screens. */
+  .max-w-screen-xl:has(> article main.pub-page) { max-width: none; }
+  .max-w-screen-xl:has(> article main.pub-page) > :not(article) { display: none; }   /* empty sidebar/TOC columns */
+  article:has(main.pub-page) { padding-right: 0; }
+  main.pub-page { max-width: var(--site-max); margin-inline: auto; padding-inline: var(--site-pad); box-sizing: content-box; }
+  main.pub-page .pub-meta { max-width: none; display: block; margin: 0; }
+  main.pub-page .pub-abstract > .font-bold, main.pub-page .pub-facts > .font-bold { font-size: 1.25rem; line-height: 1.3; margin: 1.75rem 0 .5rem; }
+  main.pub-page .pub-abstract > .font-bold:first-child, main.pub-page .pub-facts > .font-bold:first-child { margin-top: 0; }
+  main.pub-page .pub-abstract > div:not(.font-bold), main.pub-page .movies-intro { font-size: 1.125rem; line-height: 1.7; }
+  main.pub-page .pub-facts { margin-top: 2rem; }
+  main.pub-page .prose, main.pub-page .article-container { max-width: none; }
+  main.pub-page .movies-title { font-size: 1.25rem; line-height: 1.3; margin-bottom: .5rem; }
+  main.pub-page .movies { max-width: 48rem; }                       /* movies in the reading column, like the abstract */
+  main.pub-page .container .max-w-prose { max-width: none; }          /* previous/next navigation over the full width */
+  @media (min-width: 1024px) {
+    main.pub-page { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); column-gap: 4rem;
+                    grid-template-rows: auto auto auto auto 1fr; align-items: start; }
+    main.pub-page > * { grid-column: 1 / -1; }
+    main.pub-page > h1 { grid-row: 1; max-width: 60rem; }
+    main.pub-page > div:nth-of-type(1) { grid-row: 2; }                      /* date, authors, links */
+    main.pub-page .pub-meta { display: contents; }
+    main.pub-page .pub-abstract { grid-column: 1; grid-row: 4 / 6; max-width: 48rem; }
+    main.pub-page > .featured-image-wrapper { grid-column: 1; grid-row: 3; margin: 0 0 2.5rem !important; max-width: 48rem; } /* figure in the reading column */
+    main.pub-page .pub-facts { grid-column: 2; grid-row: 3 / 6; margin-top: 0; }
+    main.pub-page > .prose, main.pub-page > time, main.pub-page > .container { grid-row: auto; }
+    main.pub-page > .prose:not(.container) { grid-row: 6; margin-top: 3rem; }
+    main.pub-page > time { grid-row: 7; }
+    main.pub-page > .container { grid-row: 8; }
+  }
 </style>
