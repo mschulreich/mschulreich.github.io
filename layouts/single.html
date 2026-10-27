@@ -267,7 +267,7 @@
 
         {{ if not $pub.is_empty }}
           <div class="font-bold text-2xl">{{ i18n "publication" }}</div>
-          <div>{{ $pub.display | markdownify }}{{ with $pub.publisher }}. {{ . | markdownify }}{{ end }}</div>
+          <div class="pub-venue-full">{{ $pub.display | markdownify }}{{ with $pub.publisher }}. {{ . | markdownify }}{{ end }}</div>
         {{ end }}
 
         {{/* Work-level flags — independent of whether a venue is set, so preprints can still surface OA/peer-review status. */}}
