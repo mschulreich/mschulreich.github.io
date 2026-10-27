@@ -1,0 +1,13 @@
+{{/* One entry of the publication list (block publist):
+     title (larger, bold, links to the publication page) / authors / venue, year / links */}}
+{{ $p := . }}
+{{ $pub := partial "functions/resolve_publication.html" $p }}
+{{ $year := (time ($p.Params.event_start | default $p.Date)).Format "2006" }}
+<li class="pub-item">
+  <p class="pub-title"><a class="cite-title" href="{{ $p.RelPermalink }}">{{ ($p.Params.title_html | default $p.Title) | safeHTML }}</a></p>
+  <p class="pub-authors">{{ partial "page_metadata_authors" $p }}</p>
+  {{/* year after the venue; not for submitted manuscripts ("…, submitted" says enough) */}}
+  {{ $submitted := in ($p.Params.publication_types | default slice) "manuscript" }}
+  <p class="pub-venue">{{ with $pub.display_short }}{{ . | markdownify }}{{ end }}{{ if not $submitted }} ({{ $year }}){{ end }}</p>
+  {{ if partial "functions/has_attachments" $p }}<div class="pub-links">{{ partial "page_links" (dict "page" $p "is_list" 1) }}</div>{{ end }}
+</li>

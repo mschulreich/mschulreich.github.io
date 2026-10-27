@@ -449,11 +449,10 @@
   .movie-toggle.is-playing .movie-play { opacity: 0; }
   .movie figcaption { margin: .6rem 0 0 !important; line-height: 1.4; font-size: .9rem; text-align: center; color: inherit !important; opacity: .8; }
   .svc-referee { margin: 0; line-height: 1.7; }
-  /* publication list (block publist): rows like the talks list */
-  .pub-rows { list-style: none; margin: 0; padding: 0; }
-  .pub-row { padding: 1rem 0; border-bottom: 1px solid rgba(127,127,127,.2); line-height: 1.6; }
-  .pub-row:first-child { border-top: 1px solid rgba(127,127,127,.2); }
-  .pub-row .pub-list-item { margin: 0 !important; }
-  .pub-row .pub-icon { display: none; }
-  .pub-row .view-citation > .flex { margin-top: .45rem; }
+  /* publication list entries (partial pub-item.html) */
+  .pub-item { padding: 1.1rem 0; border-bottom: 1px solid rgba(127,127,127,.2); }
+  .pub-title { margin: 0 0 .3rem; font-size: 1.12rem; font-weight: 700; line-height: 1.4; }
+  .pub-authors { margin: 0; font-size: .95rem; line-height: 1.5; }
+  .pub-venue { margin: .1rem 0 0; font-size: .9rem; line-height: 1.5; opacity: .8; }
+  .pub-links { display: flex; flex-wrap: wrap; gap: .25rem .75rem; margin-top: .5rem; }
 </style>

@@ -117,7 +117,7 @@
     <h3 class="sec-subheading">Publications</h3>
     {{ $pubs := where (where site.RegularPages "Section" "publications") "Params.projects" "intersect" (slice $key) }}
     {{ if $pubs }}
-      <div class="prj-pubs">{{ range $pubs.ByDate.Reverse }}{{ partial "views/citation.html" (dict "item" .) }}{{ end }}</div>
+      <ul class="talk-list">{{ range $pubs.ByDate.Reverse }}{{ partial "pub-item.html" . }}{{ end }}</ul>{{/* same entries as the publications page */}}
     {{ end }}
     {{/* not yet published: same markup as views/citation.html (authors (status). Title. Venue.) */}}
     {{ with $c.upcoming_publications }}<div class="prj-pubs">{{ range . }}

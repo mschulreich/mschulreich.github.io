@@ -16,8 +16,8 @@
     {{ range $all }}{{ if in (.Params.publication_types | default slice) $g.publication_type }}{{ $pubs = $pubs | append . }}{{ end }}{{ end }}
     {{ if $pubs }}
       <h3 class="sec-subheading"{{ with $g.id }} id="{{ . }}"{{ end }}>{{ $g.title }} <span class="sec-count">{{ len $pubs }}</span></h3>
-      <ul class="pub-rows">
-        {{ range sort $pubs "Date" "desc" }}<li class="pub-row">{{ partial "views/citation.html" (dict "item" .) }}</li>{{ end }}
+      <ul class="talk-list">
+        {{ range sort $pubs "Date" "desc" }}{{ partial "pub-item.html" . }}{{ end }}
       </ul>
     {{ end }}
   {{ end }}
