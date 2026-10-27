@@ -12,8 +12,8 @@
       <p class="talk-meta">{{ $t.place }}
         <span class="talk-badge talk-badge--{{ $t.type }}">{{ $t.label | default (index $labels $t.type) }}</span>
         {{ with $t.note }}<span class="talk-badge talk-badge--note">{{ . }}</span>{{ end }}
-        {{ with $t.slides }}<a class="talk-link" href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end }}
-        {{ with $t.video }}<a class="talk-link" href="{{ . }}" target="_blank" rel="noopener">Video</a>{{ end }}
+        {{ with $t.slides }}<a class="talk-link" href="{{ . }}" target="_blank" rel="noopener">{{ partial "functions/get_icon" (dict "name" "hero/presentation-chart-bar" "attributes" "class=\"action-icon\"") }}Slides</a>{{ end }}
+        {{ with $t.video }}<a class="talk-link" href="{{ . }}" target="_blank" rel="noopener">{{ partial "functions/get_icon" (dict "name" "hero/play-circle" "attributes" "class=\"action-icon\"") }}Video</a>{{ end }}
       </p>
     </div>
   </li>

@@ -9,7 +9,9 @@
       <article class="teach-card">
         <p class="teach-kind">{{ .kind }} · {{ .place }}</p>
         <h3 class="teach-title">{{ .title }}</h3>
-        <p class="teach-terms">{{ range $i, $term := .terms }}{{ if $i }} · {{ end }}<span class="nowrap">{{ $term }}</span>{{ end }}</p>
+        {{/* terms are listed chronologically in data/teaching.yaml; shown newest first */}}
+        {{ $terms := .terms }}{{ $n := len $terms }}
+        <p class="teach-terms">{{ range $k := seq $n }}{{ if gt $k 1 }} · {{ end }}<span class="nowrap">{{ index $terms (sub $n $k) }}</span>{{ end }}</p>
         {{ with .note }}<p class="teach-note">{{ . }}</p>{{ end }}
       </article>
     {{ end }}

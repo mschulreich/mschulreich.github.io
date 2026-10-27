@@ -41,7 +41,7 @@
           <figcaption>
             <p class="out-card-title">{{ .title | markdownify }}</p>
             {{ with .source }}<p class="out-card-src">{{ . | markdownify }}</p>{{ end }}
-            {{ with .url }}<a class="out-card-link" href="{{ . }}" target="_blank" rel="noopener">{{ $.wcBlock.content.media_link_label | default "Open on YouTube" }} ↗</a>{{ end }}
+            {{ with .url }}<a class="out-card-link" href="{{ . }}" target="_blank" rel="noopener">{{ partial "functions/get_icon" (dict "name" "hero/play-circle" "attributes" "class=\"action-icon\"") }}{{ $.wcBlock.content.media_link_label | default "Open on YouTube" }} ↗</a>{{ end }}
           </figcaption>
         </figure>
       {{ end }}
