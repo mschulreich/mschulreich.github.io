@@ -27,10 +27,10 @@
      with white logo/text until the page is scrolled (see body-end hook) */
   body:has(#splash) .page-header { position: fixed; inset-inline: 0; }
   /* anchor jumps: HugoBlox already sets html { scroll-padding-top: <navbar height> },
-     so the section heading would sit a full section padding below the navbar.
-     Negative margins pull the heading up to ~1.5rem below the navbar. */
-  body:has(#splash) section[id] { scroll-margin-top: -1.5rem; }
-  body:has(#splash) section#about { scroll-margin-top: -3.5rem; }
+     so the section heading sits one section padding (48 px) below the navbar, the same
+     white space as above the heading of the Talks/Publications pages. */
+  body:has(#splash) section[id] { scroll-margin-top: 0; }      /* heading lands 48 px below the menu bar, as on the subpages */
+  body:has(#splash) section#about { scroll-margin-top: -2rem; } /* About has 80 px top padding */
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked))::before { opacity: 0; }
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked)) {
     background-color: transparent;
