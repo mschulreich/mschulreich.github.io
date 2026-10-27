@@ -456,4 +456,19 @@
   .pub-venue { margin: .2rem 0 0; font-size: .9rem; line-height: 1.5; opacity: .8; }
   .pub-venue em, .pub-venue i, .pub-venue-full em, .pub-venue-full i { font-style: normal; } /* journal names upright (lists and paper pages), as in astronomy reference lists */
   .pub-links { display: flex; flex-wrap: wrap; gap: .25rem .75rem; margin-top: .34rem; }
+  /* Positions / Education cards (HugoBlox experience & education blocks inside About):
+     institution in neutral grey (violet means "link" on this site), even 8 px line gaps, equal top/bottom padding */
+  /* hierarchy like the publication list: title, institution and thesis in body text colour,
+     last detail line (department, distinction) dimmed like the journal line (note: this theme's
+     gray-* scale is remapped and nearly black, so opacity is used instead) */
+  #about .about-cv h3 + p, #about .about-cv .rounded-xl > .prose { color: inherit; }
+  #about .about-cv .rounded-xl > .prose:not(:has(> p)), #about .about-cv .rounded-xl > .prose > p:last-child:not(:first-child) { opacity: .7; }
+  #about .about-cv h3 + p { margin-top: .125rem; }
+  #about .about-cv .prose em { font-style: normal; } /* thesis titles upright, like all other titles on the site */
+  #about .about-cv .rounded-xl > .mb-3 { margin-bottom: 0; }
+  #about .about-cv .rounded-xl > .prose { margin-top: -.075rem; } /* prose has a tall line height */
+  #about .about-cv .rounded-xl > .prose > p { margin: 0; }
+  #about .about-cv .rounded-xl > .prose > p + p { margin-top: 0; }
+  #about .about-cv .rounded-xl { padding-bottom: 1.3rem; }
+  #about .about-cv time span { color: inherit !important; font-weight: inherit; } /* "Present" like the rest of the period */
 </style>
