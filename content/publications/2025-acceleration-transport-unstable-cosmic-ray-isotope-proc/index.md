@@ -11,6 +11,7 @@ publication:
   name: "39th International Cosmic Ray Conference"
   pages: "132"
 peer_reviewed: false
+open_access: true   # publisher open access (SciX/ADS property PUB_OPENACCESS)
 summary: "Conference version of our [ApJ paper](/publications/2025-acceleration-transport-unstable-cosmic-ray-isotope/) on <sup>60</sup>Fe as a cosmic-ray isotope."
 featured: false
 links:

@@ -47,6 +47,7 @@ publication:
   volume: "51"
   pages: "410"
 peer_reviewed: false
+open_access: true   # publisher open access (SciX/ADS property PUB_OPENACCESS)
 summary: "Astro2020 white paper: geological and lunar <sup>60</sup>Fe show that at least one supernova exploded within 100 pc of Earth in the last few Myr — a strong case for coordinated, multi-disciplinary research programs."
 abstract: "Geological and lunar evidence of radioactive <sup>60</sup>Fe implies that at least one supernova exploded within 100 pc of Earth within the last few Myr. The unique information provided by <sup>60</sup>Fe to assess nearby supernovae make now a compelling time for the astronomy community to advocate for supporting multi-disciplinary, cross-cutting research programs."
 featured: false

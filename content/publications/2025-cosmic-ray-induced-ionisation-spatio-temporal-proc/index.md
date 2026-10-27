@@ -19,6 +19,7 @@ publication:
   name: "39th International Cosmic Ray Conference"
   pages: "92"
 peer_reviewed: false
+open_access: true   # publisher open access (SciX/ADS property PUB_OPENACCESS)
 summary: "Contribution from the CRitiLISM collaboration on cosmic-ray-induced ionization and on spatio-temporal correlations between supernova remnants and molecular clouds."
 featured: false
 links:
