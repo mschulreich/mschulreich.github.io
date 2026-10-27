@@ -17,6 +17,7 @@ courses:
     kind: Lecture series
     place: TU Berlin
     terms: [Winter 2020/21, Winter 2021/22, Winter 2022/23, Winter 2023/24]
+    note: One lecture per term
   - title: The Cosmic Matter Cycle — Current Research Topics
     kind: Seminar
     place: TU/FU Berlin
