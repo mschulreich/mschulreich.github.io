@@ -16,7 +16,7 @@ sections:
       # groups in display order; a group without entries is not shown
       groups:
         - { title: Submitted, publication_type: manuscript, id: submitted }
-        - { title: Refereed journal articles, publication_type: article-journal, id: journal }
+        - { title: Refereed journal articles, publication_type: article-journal, id: journal, first_author_count: true }
         - { title: Conference contributions, publication_type: paper-conference, id: conference }
         - { title: White papers, publication_type: report, id: white-papers }
         - { title: Thesis, publication_type: thesis, id: thesis }

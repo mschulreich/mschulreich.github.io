@@ -3,7 +3,8 @@
      content:
        title: Publications
        intro: markdown
-       groups: [{ title, publication_type, id }]   # publication_type as in the CSL types of the pages
+       groups: [{ title, publication_type, id, first_author_count }]   # publication_type as in the CSL types of the pages;
+                                                                        # first_author_count: true adds "· N first-author" to the count
 */}}
 {{ $page := .wcPage }}
 {{ $c := .wcBlock.content | default dict }}
@@ -15,7 +16,7 @@
     {{ $pubs := slice }}
     {{ range $all }}{{ if in (.Params.publication_types | default slice) $g.publication_type }}{{ $pubs = $pubs | append . }}{{ end }}{{ end }}
     {{ if $pubs }}
-      <h3 class="sec-subheading"{{ with $g.id }} id="{{ . }}"{{ end }}>{{ $g.title }} <span class="sec-count">{{ len $pubs }}</span></h3>
+      <h3 class="sec-subheading"{{ with $g.id }} id="{{ . }}"{{ end }}>{{ $g.title }} <span class="sec-count">{{ len $pubs }}{{ if $g.first_author_count }}{{ $fa := 0 }}{{ range $pubs }}{{ with .Params.authors }}{{ if eq (index . 0) "me" }}{{ $fa = add $fa 1 }}{{ end }}{{ end }}{{ end }} · {{ $fa }} first-author{{ end }}</span></h3>
       <ul class="talk-list">
         {{ range sort $pubs "Date" "desc" }}{{ partial "pub-item.html" . }}{{ end }}
       </ul>
