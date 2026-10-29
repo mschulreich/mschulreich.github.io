@@ -344,11 +344,13 @@
     border-radius: 50%; overflow: hidden; background: #000; cursor: pointer;
     box-shadow: 0 30px 60px -25px rgba(40, 10, 90, .6); }
   .prj-dome video { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.015); }
-  .prj-play { position: absolute; left: 50%; top: 50%; width: 4.2rem; height: 4.2rem; margin: -2.1rem 0 0 -2.1rem; border-radius: 50%;
-    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  /* one play button for all own videos (dome video here, simulation movies on paper pages) */
+  .prj-play, .movie-play { position: absolute; left: 50%; top: 50%; width: 4rem; height: 4rem; margin: -2rem 0 0 -2rem; border-radius: 50%;
+    background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.7); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
     transition: opacity .25s, transform .25s; }
-  .prj-play::after { content: ""; position: absolute; left: 1.6rem; top: 1.25rem; border-style: solid; border-width: .85rem 0 .85rem 1.3rem; border-color: transparent transparent transparent #fff; }
-  .prj-dome:hover .prj-play { transform: scale(1.06); }
+  .prj-play::after, .movie-play::after { content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-38%, -50%);
+    border-style: solid; border-width: .8rem 0 .8rem 1.25rem; border-color: transparent transparent transparent #fff; }
+  @media (hover: hover) { .prj-dome:hover .prj-play, .movie-toggle:hover .movie-play { transform: scale(1.06); } }
   .prj-dome.is-playing .prj-play { opacity: 0; }
   .prj-media figcaption { margin: 1rem auto 0; max-width: 30rem; font-size: .85rem; line-height: 1.55; opacity: .7; text-align: center; }
   .prj-questions { list-style: none; counter-reset: q; margin: 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
@@ -444,9 +446,6 @@
   .movie { margin: 0 !important; display: flex; flex-direction: column; align-items: center; flex: 0 1 calc((100% - 2.5rem) / 3); min-width: 9rem; }
   .movie-toggle { position: relative; display: block; width: fit-content; max-width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
   .movie video { margin: 0 !important; display: block; width: auto; height: auto; max-width: 100%; max-height: 85vh; border-radius: .5rem; background: #fff; }
-  .movie-play { position: absolute; left: 50%; top: 50%; width: 3.6rem; height: 3.6rem; margin: -1.8rem 0 0 -1.8rem; border-radius: 50%;
-    background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.7); transition: opacity .25s; }
-  .movie-play::after { content: ""; position: absolute; left: 1.4rem; top: 1.05rem; border-style: solid; border-width: .75rem 0 .75rem 1.15rem; border-color: transparent transparent transparent #fff; }
   .movie-toggle.is-playing .movie-play { opacity: 0; }
   .movies-grid:has(> .movie:only-child) > .movie { flex-basis: 100%; } /* a single movie uses the full column width */
   .movie figcaption { margin: .6rem 0 0 !important; line-height: 1.4; font-size: .9rem; text-align: center; color: inherit !important; opacity: .8; }
