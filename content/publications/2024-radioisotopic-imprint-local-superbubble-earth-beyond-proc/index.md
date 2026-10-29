@@ -6,6 +6,7 @@ authors:
   - "D. Breitschwerdt"
 date: "2024-07-01T00:00:00Z"
 publication_types: ["paper-conference"]
+type_label: Conference abstract   # talk/poster abstract only, no proceedings paper
 publication:
   name: "EAS2024, European Astronomical Society Annual Meeting"
   pages: "53"

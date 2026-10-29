@@ -5,6 +5,7 @@ authors:
   - "D. Breitschwerdt"
 date: "2016-06-01T00:00:00Z"
 publication_types: ["paper-conference"]
+type_label: Conference abstract   # talk/poster abstract only, no proceedings paper
 publication:
   name: "Supernova Remnants: An Odyssey in Space after Stellar Death"
   pages: "113"
