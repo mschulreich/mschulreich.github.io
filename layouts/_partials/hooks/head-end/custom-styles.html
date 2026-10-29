@@ -472,6 +472,11 @@
   #about .about-cv .rounded-xl > .prose > p + p { margin-top: .25rem; }
   #about .about-cv .rounded-xl { padding-bottom: 1.3rem; }
   #about .about-cv time span { color: inherit !important; font-weight: inherit; } /* "Present" like the rest of the period */
+  /* hover frame in the accent violet of the current mode (the theme used the darker light-mode violet in dark mode too) */
+  @media (hover: hover) {
+    #about .about-cv .group:hover > .rounded-xl { border-color: color-mix(in srgb, var(--link) 35%, transparent) !important; }
+    html.dark #about .about-cv .group:hover > .rounded-xl { border-color: color-mix(in srgb, var(--link) 45%, transparent) !important; }
+  }
   /* narrow screens: the period moves above the title (as in the talks list) instead of between institution and details */
   @media (max-width: 639px) { #about .about-cv .rounded-xl > .mb-3 { flex-direction: column-reverse; gap: .35rem; } }
   /* previous/next navigation below a page: titles, styled like other title links (not like links in running text) */
