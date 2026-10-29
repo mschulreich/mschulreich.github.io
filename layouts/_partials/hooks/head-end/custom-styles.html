@@ -333,7 +333,8 @@
   .prj-links--dark a { color: inherit; border-color: currentColor; background: transparent; }
   .prj-body { padding-block: 1rem 4rem; }
   .prj-section { padding-top: 3.5rem; }
-  .prj-section + .prj-section { padding-top: 3rem; } /* between sections: 48 px as on all other pages */
+  .prj-section + .prj-section:not(.prj-funding) { padding-top: 3rem; } /* between sections: 48 px as on all other pages */
+  .prj-section.prj-funding { margin-top: 3rem; }                          /* FWF box: same distance, its own even padding */
   .prj-prose { font-size: 1.1rem; line-height: 1.8; max-width: 50rem; }
   .prj-prose p { margin: 0 0 1.1em; }
   /* About + AMNH dome movie side by side (like the homepage About) */
@@ -515,7 +516,7 @@
     main.pub-page > .featured-image-wrapper { grid-column: 1; grid-row: 3; margin: 0 0 2.5rem !important; max-width: 48rem; } /* figure in the reading column */
     main.pub-page .pub-facts { grid-column: 2; grid-row: 3 / 6; margin-top: 0; }
     main.pub-page > .prose, main.pub-page > time, main.pub-page > .container { grid-row: auto; }
-    main.pub-page > .prose:not(.container) { grid-row: 6; margin-top: 3rem; }
+    main.pub-page > .prose:not(.container) { grid-row: 6; }                     /* the movies section brings its own 48 px */
     main.pub-page > time { grid-row: 7; }
     main.pub-page > .container { grid-row: 8; }
   }
