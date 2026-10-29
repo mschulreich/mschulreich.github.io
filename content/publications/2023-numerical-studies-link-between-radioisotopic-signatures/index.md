@@ -31,6 +31,6 @@ links:
 # SciX/ADS bibcode: 2023A&A...680A..39S
 ---
 
-{{< movies title="Simulation movie" intro="Formation of the Local Bubble over the past 20 Myr in our 3D hydrodynamic simulation: volume rendering of the hydrogen number density <i>n</i><sub>H</sub>, showing only gas affected by the bubble (the stratified background medium, assumed to be at rest, is masked out). White dots mark stars of the Scorpius–Centaurus association; the single dot entering the frame is the Sun. At the present day, the camera flies into the bubble, stops at the position of the Sun, and takes a 360° look around." >}}
+{{< movies title="Simulation movie" intro="Formation of the Local Bubble over the past 20 Myr in our 3D hydrodynamic simulation: volume rendering of the hydrogen number density <i>n</i><sub>H</sub>, showing only gas affected by the bubble (the stratified background medium, assumed to be at rest, is masked out). White dots mark stars of the Scorpius–Centaurus association; the single dot entering the frame is the Sun. During the evolution, the camera circles the bubble once; at the present day, it flies inside, stops at the position of the Sun, and takes a 360° look around." >}}
 {{< movie src="lb-formation.mp4" poster="lb-formation-poster.jpg" >}}
 {{< /movies >}}
