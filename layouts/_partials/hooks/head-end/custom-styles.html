@@ -471,6 +471,8 @@
   #about .about-cv .rounded-xl > .prose > p + p { margin-top: .25rem; }
   #about .about-cv .rounded-xl { padding-bottom: 1.3rem; }
   #about .about-cv time span { color: inherit !important; font-weight: inherit; } /* "Present" like the rest of the period */
+  /* narrow screens: the period moves above the title (as in the talks list) instead of between institution and details */
+  @media (max-width: 639px) { #about .about-cv .rounded-xl > .mb-3 { flex-direction: column-reverse; gap: .35rem; } }
   /* previous/next navigation below a page: titles, styled like other title links (not like links in running text) */
   .page-body .prose a.group.no-underline { color: inherit; text-decoration: none; }
   .page-body .prose a.group.no-underline:hover { color: var(--link); }
