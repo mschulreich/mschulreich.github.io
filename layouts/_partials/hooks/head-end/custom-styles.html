@@ -167,7 +167,7 @@
   #about .about-tools { margin-top: 2.5rem; }
   #about .about-tools-list { margin: 0; display: grid; gap: 1rem 2.5rem; grid-template-columns: 1fr; }
   @media (min-width: 768px) { #about .about-tools-list { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { #about .about-tools-list { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { #about .about-tools-list { grid-template-columns: repeat(var(--tool-cols, 3), 1fr); } }
   #about .about-tools-list dt { font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; opacity: .65; }
   #about .about-tools-list dd { margin: .2rem 0 0; }
   #about .about-chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .6rem; }

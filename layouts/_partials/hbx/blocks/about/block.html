@@ -49,9 +49,11 @@
   {{/* read directly from data/authors/<user>.yaml (the profile helper only passes known fields) */}}
   {{ if $content.show_tools }}{{ with (index (hugo.Data.authors | default dict) $username).tools }}
   <div class="about-tools">
-    <h3 class="about-subheading">{{ $content.tools_title | default "Methods & Tools" }}</h3>
-    <dl class="about-tools-list">
-      {{ range . }}<div><dt>{{ .group }}</dt><dd>{{ range $i, $it := .items }}{{ if $i }} · {{ end }}{{ if reflect.IsMap $it }}{{ with $it.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $it.name }}</a>{{ else }}{{ $it.name }}{{ end }}{{ else }}{{ $it }}{{ end }}{{ end }}</dd></div>{{ end }}
+    <h3 class="about-subheading">{{ $content.tools_title | default "Software & tools" }}</h3>
+    {{/* groups with a future publish_date stay hidden; the grid gets one column per visible group (max 4) */}}
+    {{ $groups := slice }}{{ range . }}{{ if or (not .publish_date) (not ((time .publish_date).After now)) }}{{ $groups = $groups | append . }}{{ end }}{{ end }}
+    <dl class="about-tools-list" style="--tool-cols: {{ len $groups }}">
+      {{ range $groups }}<div><dt>{{ .group }}</dt><dd>{{ range $i, $it := .items }}{{ if $i }} · {{ end }}<span class="nowrap">{{ if reflect.IsMap $it }}{{ with $it.url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $it.name }}</a>{{ else }}{{ $it.name }}{{ end }}{{ else }}{{ $it }}{{ end }}</span>{{ end }}</dd></div>{{ end }}
     </dl>
   </div>
   {{ end }}{{ end }}

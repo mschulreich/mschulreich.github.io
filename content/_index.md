@@ -32,7 +32,8 @@ sections:
       image: about.jpg
       image_alt: Michael M. Schulreich at a blackboard with the equations of hydrodynamics
       interests_title: Research interests
-      show_tools: false          # "Methods & Tools" (data/authors/me.yaml → tools); true to show
+      show_tools: true           # "Software & tools" (data/authors/me.yaml → tools); false to hide
+      tools_title: Software & tools
     design:
       date_format: 'Jan 2006'
 

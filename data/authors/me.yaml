@@ -45,33 +45,31 @@ interests:
   - 3D (M)HD simulations
   - Analytic modeling
 
-# Methods & tools (from CV) — currently hidden; set `show_tools: true` in the about block of content/_index.md to show them below the research interests.
-# An item is either a plain name or { name, url } (linked to the official site).
+# Software & tools (from CV), shown below the research interests (content/_index.md → about block → show_tools).
+# An item is either a plain name or { name, url } (linked to the official site);
+# a group with `publish_date` is only shown from that date on (needs a rebuild after it).
 tools:
+  # not shown yet — uncomment once RELIC is public on GitHub (set the url to the actual repo)
+  # - group: Own software
+  #   items:
+  #     - { name: RELIC (supernova archaeology), url: "https://github.com/mschulreich/relic" }
   - group: Simulation codes
     items:
       - { name: RAMSES, url: "https://github.com/ramses-organisation/ramses" }
       - { name: MPI-AMRVAC, url: "https://amrvac.org" }
       - { name: FLASH, url: "https://flash.rochester.edu" }
       - { name: VH-1, url: "https://ascl.net/1204.007" }
-  - group: High-performance computing
-    items: [MPI, OpenMP, OpenACC]
-  - group: Programming
-    items: [Python, Fortran, C]
-  - group: Data access
-    items:
-      - { name: ADQL, url: "https://www.ivoa.net/documents/ADQL/" }
-      - { name: TOPCAT, url: "https://www.star.bristol.ac.uk/mbt/topcat/" }
-      - { name: astroquery, url: "https://astroquery.readthedocs.io" }
-  - group: Analysis & visualization
+  - group: Programming & parallel computing
+    items: [Python, Fortran, C, MPI, OpenMP, OpenACC]
+  - group: Analysis & data
     items:
       - { name: yt, url: "https://yt-project.org" }
       - { name: ParaView, url: "https://www.paraview.org" }
       - { name: VisIt, url: "https://visit-dav.github.io/visit-website/" }
       - { name: VAPOR, url: "https://www.vapor.ucar.edu" }
-  - group: Symbolic mathematics
-    items:
-      - { name: Mathematica, url: "https://www.wolfram.com/mathematica/" }
+      - { name: TOPCAT, url: "https://www.star.bristol.ac.uk/mbt/topcat/" }
+      - { name: ADQL, url: "https://www.ivoa.net/documents/ADQL/" }
+      - { name: astroquery, url: "https://astroquery.readthedocs.io" }
 
 # Positions & education: taken from ORCID 0000-0001-7761-9766 (Oct 2026)
 experience:

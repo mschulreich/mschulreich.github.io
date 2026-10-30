@@ -22,3 +22,9 @@ refereeing:
     - Astronomy & Astrophysics
     - Monthly Notices of the Royal Astronomical Society
     - Astrophysics and Space Science
+
+# professional memberships (from CV), newest first
+memberships:
+  - { name: International Astronomical Union, short: IAU, since: 2022 }
+  - { name: European Astronomical Society, short: EAS, since: 2019 }
+  - { name: Astronomische Gesellschaft, short: AG, since: 2008 }

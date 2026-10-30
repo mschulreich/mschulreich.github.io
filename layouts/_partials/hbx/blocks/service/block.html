@@ -30,4 +30,10 @@
     {{ $n := len .journals }}
     <p class="svc-referee">Referee for {{ range $i, $j := .journals }}{{ if $i }}{{ if eq $i (sub $n 1) }}, and {{ else }}, {{ end }}{{ end }}<em>{{ $j }}</em>{{ end }}{{ with .since }} (since {{ . }}){{ end }}.</p>
   {{ end }}
+
+  {{ with $d.memberships }}
+    <h3 class="sec-subheading">Memberships</h3>
+    {{ $n := len . }}
+    <p class="svc-referee">Member of {{ range $i, $m := . }}{{ if $i }}{{ if eq $i (sub $n 1) }}, and {{ else }}, {{ end }}{{ end }}the {{ $m.name }} ({{ $m.short }}, since {{ $m.since }}){{ end }}.</p>
+  {{ end }}
 </div>
