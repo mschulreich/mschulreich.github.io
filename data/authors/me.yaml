@@ -49,10 +49,10 @@ interests:
 # An item is either a plain name or { name, url } (linked to the official site);
 # a group with `publish_date` is only shown from that date on (needs a rebuild after it).
 tools:
-  # not shown yet — uncomment once RELIC is public on GitHub (set the url to the actual repo)
+  # not shown yet — uncomment once the RELIC repo on GitHub is public
   # - group: Own software
   #   items:
-  #     - { name: RELIC (supernova archaeology), url: "https://github.com/mschulreich/relic" }
+  #     - { name: RELIC, url: "https://github.com/mschulreich/relic" }
   - group: Simulation codes
     items:
       - { name: RAMSES, url: "https://github.com/ramses-organisation/ramses" }
