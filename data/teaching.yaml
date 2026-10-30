@@ -48,12 +48,12 @@ supervision:
     when: "2024"
     name: David P. P. R. Schurer
     university: TU Berlin
-    title: X-ray maps from hydrodynamic simulations on the origin of the eROSITA bubbles
+    title: X-ray maps from hydrodynamic simulations on the origin of the *eROSITA* bubbles
   - level: msc
     when: "2023"
     name: Tassilo Scheffler
     university: FU Berlin
-    title: Hydrodynamical simulations on the origin and evolution of the eROSITA bubbles
+    title: Hydrodynamical simulations on the origin and evolution of the *eROSITA* bubbles
   - level: msc
     when: "2021"
     name: Frederik Berberich
