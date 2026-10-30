@@ -80,7 +80,7 @@ sections:
     id: teaching
     content:
       title: Teaching
-      intro: Graduate-level lectures, lab courses, and seminars at TU/FU Berlin.
+      intro: Graduate-level lectures, lab courses, and seminars at TU/FU Berlin, and supervision of Bachelor's, Master's, and PhD theses.
 
   # ── Academic service (data/service.yaml) ─────────────────────────────
   - block: service

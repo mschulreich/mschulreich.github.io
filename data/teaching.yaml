@@ -31,3 +31,51 @@ seminars:
     - Star Formation
     - Galaxy Evolution
     - Radiation Processes in Physics and Astronomy
+# supervised theses (from CV); level: phd | msc | bsc; listed newest first (ongoing on top), shown in this order
+supervision:
+  - level: phd
+    when: Since 2023
+    name: Mattia Pacicco
+    university: TU Berlin
+    title: MHD simulations of supernova remnants and superbubbles
+    working_title: true
+  - level: msc
+    when: "2026"
+    name: Emre Elmalı
+    university: TU Berlin
+    title: Kinematic analysis of star clusters in search of past supernovae in the neighbouring Orion-Eridanus superbubble
+  - level: bsc
+    when: "2024"
+    name: David P. P. R. Schurer
+    university: TU Berlin
+    title: X-ray maps from hydrodynamic simulations on the origin of the eROSITA bubbles
+  - level: msc
+    when: "2023"
+    name: Tassilo Scheffler
+    university: FU Berlin
+    title: Hydrodynamical simulations on the origin and evolution of the eROSITA bubbles
+  - level: msc
+    when: "2021"
+    name: Frederik Berberich
+    university: HU Berlin
+    title: Numerical studies on the magnetic field structure in the vicinity of superbubbles and the impact of the magnetic field on their dynamical evolution
+  - level: bsc
+    when: "2021"
+    name: Sebastian Wullrich
+    university: FU Berlin
+    title: Numerical calculations of superbubbles according to Kompaneets' approximation
+  - level: msc
+    when: "2019"
+    name: Consuelo L. Guzman
+    university: Leipzig University
+    title: Analytical studies of the interaction of high-velocity clouds with the ambient galactic halo gas
+  - level: bsc
+    when: "2019"
+    name: Jakob Neef
+    university: FU Berlin
+    title: Hydromagnetic astrophysical bow shocks
+  - level: bsc
+    when: "2019"
+    name: Philip Knospe
+    university: TU Berlin
+    title: Analytical solutions of the blunt body problem in the context of stellar bow shocks

@@ -34,8 +34,19 @@ main:
     url: /talks/
     weight: 2
   - name: Teaching
+    identifier: teaching
     url: /#teaching
     weight: 50
+  - name: Courses
+    identifier: teaching-courses
+    parent: teaching
+    url: /#teaching
+    weight: 1
+  - name: Supervision
+    identifier: teaching-supervision
+    parent: teaching
+    url: /#supervision
+    weight: 2
   - name: Service
     identifier: service
     url: /#service

@@ -31,6 +31,7 @@
      white space as above the heading of the Talks/Publications pages. */
   body:has(#splash) section[id] { scroll-margin-top: 0; }      /* heading lands 48 px below the menu bar, as on the subpages */
   body:has(#splash) section#about { scroll-margin-top: -2rem; } /* About has 80 px top padding */
+  body:has(#splash) .sec-subheading[id] { scroll-margin-top: 3rem; } /* jump targets inside a section (e.g. #supervision): also 48 px */
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked))::before { opacity: 0; }
   body:has(#splash) .page-header:not(.is-scrolled) #site-header:not(:has(#nav-toggle:checked)) {
     background-color: transparent;
@@ -270,6 +271,8 @@
   .teach-title { margin: .175rem 0 .5rem; font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
   .teach-terms { margin: 0; font-size: .9rem; opacity: .8; line-height: 1.6; }
   .teach-note { margin: .31rem 0 0; font-size: .85rem; font-style: italic; opacity: .7; }
+  .sup-wt { font-weight: 400; opacity: .7; }   /* "(working title)" in the supervision list */
+  .sup-meta { opacity: .7; }
   .teach-more { margin: 1.5rem 0 0; font-size: .95rem; opacity: .85; }
 
   /* ── Outreach ── */
@@ -529,4 +532,8 @@
   main.pub-page .pub-back { margin: 3rem 0 0; }
   main.pub-page > .prose:not(:has(> :is(p, section, h2, h3, figure, div, ul, ol, table, img))) { display: none; } /* papers without extra content */
   @media (min-width: 1024px) { main.pub-page > .pub-back { grid-row: 7; } }
+  .sup-cards { list-style: none; margin: .5rem 0 0; padding: 0; }
+  .sup-cards li { margin: 0 0 .75rem; line-height: 1.45; font-size: .95rem; }
+  .sup-cards li:last-child { margin-bottom: 0; }
+  .sup-title { font-size: .9rem; opacity: .85; }
 </style>

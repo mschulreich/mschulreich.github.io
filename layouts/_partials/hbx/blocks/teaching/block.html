@@ -4,6 +4,7 @@
 <div class="sec-wrap">
   {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
   {{ with $c.intro }}<p class="sec-intro">{{ . | markdownify }}</p>{{ end }}
+  <h3 class="sec-subheading" id="courses">Courses <span class="sec-count">{{ len $d.courses }}</span></h3>
   <div class="teach-grid">
     {{ range $d.courses }}
       <article class="teach-card">
@@ -18,5 +19,24 @@
   </div>
   {{ with $d.seminars }}
     <p class="teach-more"><strong>{{ .title }}:</strong> {{ delimit .items " · " }}</p>
+  {{ end }}
+
+  {{/* supervised theses (data/teaching.yaml → supervision): one card per level, like the course cards */}}
+  {{ with $d.supervision }}
+    <h3 class="sec-subheading" id="supervision">Supervision <span class="sec-count">{{ len . }}</span></h3>
+    {{ $sup := . }}
+    <div class="teach-grid">
+    {{ range $lvl := slice "bsc" "msc" "phd" }}
+      {{ $items := where $sup "level" $lvl }}
+      {{ with $items }}
+        <article class="teach-card">
+          <p class="teach-kind">{{ index (dict "phd" "PhD theses" "msc" "Master's theses" "bsc" "Bachelor's theses") $lvl }} · {{ len . }}</p>
+          <ul class="sup-cards">
+            {{ range . }}<li><strong>{{ .name }}</strong> <span class="sup-meta">({{ .university }}, {{ .when | lower }})</span><br><span class="sup-title">{{ .title | markdownify }}{{ if .working_title }} <span class="sup-wt">(working title)</span>{{ end }}</span></li>{{ end }}
+          </ul>
+        </article>
+      {{ end }}
+    {{ end }}
+    </div>
   {{ end }}
 </div>
