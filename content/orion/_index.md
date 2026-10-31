@@ -51,6 +51,7 @@ sections:
       approach:
         - title: Simulations
           text: 3D magnetohydrodynamic simulations with adaptive mesh refinement (RAMSES), following gas, dust, and radionuclides through the evolving bubbles.
+        # once RELIC is public: rephrase this pillar around RELIC (e.g. "Cluster reconstructions"; Gaia gives membership, ages via isochrones, and past orbits, not masses directly)
         - title: Stellar populations
           text: '*Gaia*-based reconstructions of nearby star clusters and their past supernovae, in close collaboration with the Alves group at the University of Vienna.'
         - title: Measurements
