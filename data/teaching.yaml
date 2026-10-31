@@ -25,6 +25,7 @@ courses:
     note: with D. Breitschwerdt
 seminars:
   title: Earlier seminar topics (TU/FU Berlin, 2009–2012, with D. Breitschwerdt)
+  terms: [Summer 2009, Winter 2009/10, Summer 2010, Winter 2010/11, Summer 2012]   # one per topic (from CV); only used for the term count
   items:
     - High-Energy Astrophysics
     - Dark Energy — The Dark Side of the Universe

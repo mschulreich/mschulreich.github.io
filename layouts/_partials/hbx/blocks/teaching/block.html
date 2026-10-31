@@ -4,9 +4,10 @@
 <div class="sec-wrap">
   {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
   {{ with $c.intro }}<p class="sec-intro">{{ . | markdownify }}</p>{{ end }}
-  {{/* count: distinct courses (earlier seminar topics are variants, not extra courses) · terms taught (each earlier topic ran for one term) */}}
-  {{ $nc := len $d.courses }}{{ $nt := 0 }}{{ range $d.courses }}{{ $nt = add $nt (len .terms) }}{{ end }}
-  {{ with $d.seminars }}{{ $nt = add $nt (len .items) }}{{ end }}
+  {{/* count: distinct courses (earlier seminar topics are variants, not extra courses) · distinct terms with teaching (a term with several courses counts once) */}}
+  {{ $nc := len $d.courses }}{{ $terms := slice }}{{ range $d.courses }}{{ $terms = $terms | append .terms }}{{ end }}
+  {{ with $d.seminars }}{{ with .terms }}{{ $terms = $terms | append . }}{{ end }}{{ end }}
+  {{ $nt := len ($terms | uniq) }}
   <h3 class="sec-subheading" id="courses">Courses <span class="sec-count">{{ $nc }} · {{ $nt }} terms</span></h3>
   <div class="teach-grid">
     {{ range $d.courses }}
