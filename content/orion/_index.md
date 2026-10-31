@@ -30,7 +30,7 @@ sections:
       about_media:
         video: media/amnh-local-bubble.mp4
         poster: amnh-poster.jpg
-        caption: 'Formation of the Local Bubble, based on our simulations, as shown in the space show *Encounters in the Milky Way* at the Hayden Planetarium.<br>© American Museum of Natural History'
+        caption: 'Formation of the Local Bubble, based on my simulations, as shown in the space show *Encounters in the Milky Way* at the Hayden Planetarium.<br>© American Museum of Natural History'
       about: |-
         Roughly 4.6 billion years ago, our Sun and Solar System were born and began a long journey around the center of the Milky Way. On this journey they pass through wildly different cosmic neighborhoods, from cold, dense star-forming clouds to vast, almost empty bubbles of hot gas. Today we live inside such a bubble: the **Local Bubble**, a cavity nearly a thousand light-years across, carved out by a series of supernova explosions over the past 10 to 15 million years.
 
