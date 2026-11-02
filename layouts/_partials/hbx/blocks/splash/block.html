@@ -6,6 +6,7 @@
        username: me            # profile in data/authors/ (links are taken from there)
        title: ''               # default: profile display name
        subtitle: ''
+       credit: ''              # photo credit, shown in small type just below the image
 */}}
 {{ $block := .wcBlock }}
 {{ $content := $block.content | default dict }}
@@ -41,3 +42,4 @@
     {{ end }}
   </div>
 </div>
+{{ with $content.credit }}<p class="splash-credit">{{ . | markdownify }}</p>{{ end }}

@@ -11,6 +11,7 @@ sections:
       username: me
       title: 'Michael M. Schulreich'
       subtitle: 'Astrophysicist'
+      credit: 'Photo: Wolf Lux'
     design:
       spacing:
         padding: ['0', '0', '0', '0']
@@ -31,6 +32,7 @@ sections:
       title: About
       image: about.jpg
       image_alt: Michael M. Schulreich at a blackboard with the equations of hydrodynamics
+      image_credit: 'Photo: Wolf Lux'
       interests_title: Research interests
       show_tools: true           # "Software & tools" (data/authors/me.yaml → tools); false to hide
       tools_title: Software & tools

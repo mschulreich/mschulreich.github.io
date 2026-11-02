@@ -30,6 +30,7 @@
         <figure class="about-photo">
           <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
                alt="{{ $content.image_alt | default $profile.name.display }}" loading="lazy">
+          {{ with $content.image_credit }}<figcaption class="about-photo-credit">{{ . | markdownify }}</figcaption>{{ end }}
         </figure>
       {{ end }}
     {{ end }}
