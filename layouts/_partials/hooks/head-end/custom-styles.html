@@ -406,8 +406,8 @@
   em em, i em, em i { font-style: normal; }
   /* ══ Links: one consistent rule set ═══════════════════════════════════════
      A) links inside running text  → accent colour + thin underline
-     B) titles that are links      → look like titles; accent + underline on hover;
-                                     external ones get a small ↗
+     B) titles that are links      → look like titles; accent + underline on hover
+                                     (no ↗ markers for external links anywhere)
      C) compact actions (Slides, Video, Open on YouTube, e-mail, pills) → accent, underline on hover */
   /* one accent tone per mode, the same that HugoBlox uses for its own accents (timeline, icons) */
   :root { --link: var(--color-primary-600); }
@@ -427,7 +427,6 @@
   .pubcard-title a, .proj-title a, .out-title a, .talk-event a, a.cite-title, a.svc-link { color: inherit; text-decoration: none; transition: color .15s; }
   .pubcard-title a:hover, .proj-title a:hover, .out-title a:hover, .talk-event a:hover, a.cite-title:hover, a.svc-link:hover {
     color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  .out-title a[target="_blank"]::after, .talk-event a[target="_blank"]::after, a.svc-link::after { content: "\2009\2197"; font-size: .8em; opacity: .55; }
 
   .talk-link, .out-card-link, .pubcard-links a, .contact-email a { color: var(--link); text-decoration: none; }
   .talk-link:hover, .out-card-link:hover, .pubcard-links a:hover, .contact-email a:hover {

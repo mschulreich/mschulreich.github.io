@@ -102,8 +102,7 @@ sections:
       items:
         - when: Current
           title: 'Planetarium show *Encounters in the Milky Way*'
-          url: https://www.amnh.org/exhibitions/space-show
-          text: Scientific consulting and quantitative modeling for the fulldome space show at the Hayden Planetarium of the American Museum of Natural History, New York, whose Local Bubble segment is based on my simulations.
+          text: Scientific consulting and quantitative modeling for the [fulldome space show](https://www.amnh.org/exhibitions/space-show) at the Hayden Planetarium of the American Museum of Natural History, New York, whose Local Bubble segment is based on my simulations.
         - when: 2024
           title: Public talks
           text: Long Night of Science, Berlin (Jun 22) · [37th University Days of Physics — New Findings in Astronomy](https://www.uni-marburg.de/de/fb13/news/hochschultage-physik/hochschultage-2024), Marburg (Feb 15–16)
