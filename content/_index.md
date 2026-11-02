@@ -11,6 +11,7 @@ sections:
       username: me
       title: 'Michael M. Schulreich'
       subtitle: 'Astrophysicist'
+      tagline: 'Reading the history of our cosmic neighborhood in atoms.'
       credit: 'Photo: Wolf Lux'
     design:
       spacing:
