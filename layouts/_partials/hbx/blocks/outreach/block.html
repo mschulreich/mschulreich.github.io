@@ -6,23 +6,23 @@
 {{ $c := .wcBlock.content | default dict }}
 <div class="sec-wrap">
   {{ with $c.title }}<h2 class="sec-heading">{{ . }}</h2>{{ end }}
+  {{/* intro text, photo and list are siblings in a grid: narrow screens stack them as text → photo → list,
+       wide screens put text and list on the left and the photo on the right */}}
   <div class="out-intro">
-    <div>
-      {{ with $c.text }}<div class="out-text">{{ . | $page.RenderString }}</div>{{ end }}
-      <ul class="out-list">
-        {{ range $c.items }}
-          <li>
-            <p class="out-when">{{ .when }}</p>
-            <p class="out-title">{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .title | markdownify }}{{ with .url }}</a>{{ end }}</p>
-            {{ with .text }}<p class="out-desc">{{ . | markdownify }}</p>{{ end }}
-          </li>
-        {{ end }}
-      </ul>
-    </div>
+    {{ with $c.text }}<div class="out-text">{{ . | $page.RenderString }}</div>{{ end }}
     {{ with $c.image }}{{ with resources.Get (printf "media/%s" .) }}
       {{ $i := .Resize "1000x webp q82" }}
       <figure class="out-photo"><img src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="{{ $c.image_alt }}" loading="lazy"></figure>
     {{ end }}{{ end }}
+    <ul class="out-list">
+      {{ range $c.items }}
+        <li>
+          <p class="out-when">{{ .when }}</p>
+          <p class="out-title">{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ .title | markdownify }}{{ with .url }}</a>{{ end }}</p>
+          {{ with .text }}<p class="out-desc">{{ . | markdownify }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
   </div>
   {{ with $c.media }}
     {{ with $c.media_title }}<h3 class="out-media-heading">{{ . }}</h3>{{ end }}
