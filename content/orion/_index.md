@@ -59,7 +59,7 @@ sections:
         - title: Simulations
           text: 3D magnetohydrodynamic simulations with adaptive mesh refinement (RAMSES), driven by the reconstructed supernova sequences, that follow gas, dust, and radionuclides through the Local Bubble and its neighboring superbubbles to the Solar System.
         - title: Observational tests
-          text: Predicted radionuclide signals compared with deep-sea sediments and crusts, lunar samples, and Antarctic snow and ice, and the simulated bubbles with gamma-ray lines, soft X-rays, and dust emission.
+          text: Predicted radionuclide signals compared with deep-sea sediments and crusts, Atacama Desert sediments, lunar samples, and Antarctic snow and ice, and the simulated bubbles with gamma-ray lines, soft X-rays, and dust emission.
 
       # software produced by the project: shown first under "Project outputs"
       components:
