@@ -51,9 +51,13 @@ sections:
       approach:
         - title: Simulations
           text: 3D magnetohydrodynamic simulations with adaptive mesh refinement (RAMSES), following gas, dust, and radionuclides through the evolving bubbles.
-        # once RELIC is public: rephrase this pillar around RELIC (e.g. "Cluster reconstructions"; Gaia gives membership, ages via isochrones, and past orbits, not masses directly)
-        - title: Stellar populations
-          text: '*Gaia*-based reconstructions of nearby star clusters and their past supernovae, in close collaboration with the Alves group at the University of Vienna.'
+        # second pillar: until 2027-02-01 without RELIC, then the version below that names it (RELIC release)
+        - title: Supernova reconstructions
+          expiry_date: 2027-02-01
+          text: 'Memberships, ages, initial masses, and past orbits of stars in nearby young associations from *Gaia* data, turned into probabilistic supernova histories, in close collaboration with the Alves group at the University of Vienna.'
+        - title: Supernova reconstructions
+          publish_date: 2027-02-01
+          text: 'Memberships, ages, initial masses, and past orbits of stars in nearby young associations from *Gaia* data, turned by the open-source framework RELIC into probabilistic supernova histories, in close collaboration with the Alves group at the University of Vienna.'
         - title: Measurements
           text: Direct comparison with radionuclides in deep-sea sediments and crusts, lunar samples, and Antarctic snow and ice, as well as with gamma-ray lines, soft X-rays, and dust emission.
 

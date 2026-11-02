@@ -65,7 +65,8 @@
   {{ with $c.approach }}
     <section class="prj-section"><h2 class="sec-heading">Approach</h2>
       <div class="prj-approach">
-        {{ range . }}<div class="prj-approach-item"><h3>{{ .title }}</h3><p>{{ .text | markdownify }}</p></div>{{ end }}
+        {{/* optional per item: publish_date (shown from that date on) and expiry_date (hidden from that date on); needs a rebuild */}}
+        {{ range . }}{{ if and (or (not .publish_date) (not ((time .publish_date).After now))) (or (not .expiry_date) ((time .expiry_date).After now)) }}<div class="prj-approach-item"><h3>{{ .title }}</h3><p>{{ .text | markdownify }}</p></div>{{ end }}{{ end }}
       </div></section>
   {{ end }}
 
