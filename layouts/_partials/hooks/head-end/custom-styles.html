@@ -151,6 +151,17 @@
     #splash .splash-text { margin-left: auto; width: auto; }
     #splash .splash-title { white-space: nowrap; }
   }
+  /* phones held sideways (short, wide viewport): text block to the right as on desktop, everything a size smaller */
+  @media (orientation: landscape) and (max-height: 500px) and (max-width: 1023px) {
+    #splash .splash-inner { padding-bottom: 1.5rem; }
+    #splash .splash-text { margin-left: auto; width: auto; }
+    #splash .splash-title { font-size: clamp(1.8rem, 9vh, 2.6rem); white-space: nowrap; }
+    #splash .splash-subtitle { margin-top: .3rem; font-size: 1rem; }
+    #splash .splash-tagline { margin-top: .15rem; font-size: .9rem; }
+    #splash .splash-links { margin-top: 1rem; gap: .6rem; }
+    #splash .splash-links a { width: 2.5rem; height: 2.5rem; }
+    #splash .splash-icon { width: 1.25rem; height: 1.25rem; }
+  }
 
   /* ── About block ──────────────────────────────────────────── */
   #about { padding-block: 5rem 3rem; }
