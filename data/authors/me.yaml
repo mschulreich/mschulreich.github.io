@@ -56,7 +56,7 @@ tools:
       - { name: RELIC, url: "https://github.com/mschulreich/relic" }
   - group: Simulation codes
     items:
-      - { name: RAMSES, url: "https://github.com/ramses-organisation/ramses" }
+      - { name: RAMSES, url: "https://ramses.cnrs.fr" }
       - { name: MPI-AMRVAC, url: "https://amrvac.org" }
       - { name: FLASH, url: "https://flash.rochester.edu" }
       - { name: VH-1, url: "https://ascl.net/1204.007" }
