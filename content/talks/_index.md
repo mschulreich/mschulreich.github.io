@@ -1,6 +1,6 @@
 ---
 title: Talks
-summary: Invited and contributed talks and posters by Michael Schulreich.
+summary: Invited and contributed talks and posters by Michael M. Schulreich.
 type: landing
 sections:
   - block: talks

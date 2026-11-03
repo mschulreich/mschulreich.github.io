@@ -1,7 +1,7 @@
 ---
 title: Publications
 type: landing
-description: "Publications by Michael Schulreich: refereed journal articles, conference proceedings, and theses on superbubbles, the Local Bubble, and live radionuclides."
+description: "Publications by Michael M. Schulreich: refereed journal articles, conference proceedings, and theses on superbubbles, the Local Bubble, and live radionuclides."
 # Generated from SciX/ADS (author:"Schulreich, M"); one folder per publication.
 
 sections:
