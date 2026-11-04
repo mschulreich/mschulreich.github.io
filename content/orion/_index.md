@@ -92,7 +92,7 @@ sections:
       partners:
         - name: João Alves
           inst: University of Vienna, Austria
-          role: '*Gaia*-based reconstructions of nearby stellar groups'
+          role: '*Gaia* census of nearby young star clusters'
         - name: Maria Lugaro
           inst: Konkoly Observatory, Budapest, Hungary
           role: Stellar nucleosynthesis and isotope yields
