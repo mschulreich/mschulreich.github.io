@@ -52,10 +52,10 @@ sections:
         # first pillar: until 2027-02-01 without RELIC, then the version below that names it (RELIC release)
         - title: Supernova reconstructions
           expiry_date: 2027-02-01
-          text: 'Memberships, ages, initial masses, and past orbits of stars in nearby young associations from *Gaia* data, turned into probabilistic supernova histories, in close collaboration with the Alves group at the University of Vienna.'
+          text: 'Memberships, ages, initial masses, and past orbits of stars in nearby young star clusters from *Gaia* data, turned into probabilistic supernova histories, in close collaboration with the Alves group at the University of Vienna.'
         - title: Supernova reconstructions
           publish_date: 2027-02-01
-          text: 'Memberships, ages, initial masses, and past orbits of stars in nearby young associations from *Gaia* data, turned by the open-source framework RELIC into probabilistic supernova histories, in close collaboration with the Alves group at the University of Vienna.'
+          text: 'Memberships, ages, initial masses, and past orbits of stars in nearby young star clusters from *Gaia* data, turned by the open-source framework RELIC into probabilistic supernova histories, in close collaboration with the Alves group at the University of Vienna.'
         - title: Simulations
           text: 3D magnetohydrodynamic simulations with adaptive mesh refinement (RAMSES), driven by the reconstructed supernova sequences, that follow gas, dust, and radionuclides through the Local Bubble and its neighboring superbubbles to the Solar System.
         - title: Observational tests
@@ -68,7 +68,7 @@ sections:
           longname: Reconstructing Explosive Lineages In Clusters
           logo: projects/relic-logo.png
           text: |-
-            RELIC is a probabilistic framework for supernova archaeology. Starting from *Gaia* data of nearby star clusters, it reconstructs which massive stars have already exploded, when, and where — with full uncertainty propagation — and thereby provides the supernova histories that drive the ORION simulations. Its first application is the Scorpius–Centaurus association, the birthplace of the Local Bubble.
+            RELIC is a probabilistic framework for supernova archaeology. Starting from *Gaia* data of nearby young star clusters, it reconstructs which massive stars have already exploded, when, and where — with full uncertainty propagation — and thereby provides the supernova histories that drive the ORION simulations. Its first application is the Scorpius–Centaurus association, the birthplace of the Local Bubble.
 
             The code will be released on GitHub together with the first RELIC paper.
           links:
