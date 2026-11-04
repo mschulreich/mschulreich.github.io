@@ -107,7 +107,7 @@ sections:
           role: Radionuclide measurements (AMS)
         - name: Josefa Großschedl
           inst: Astronomical Institute of the Czech Academy of Sciences, Prague, Czechia
-          role: Orion–Eridanus stellar groups
+          role: Young star clusters in Orion–Eridanus
 
       funding_logo: projects/fwf-logo.svg
       funding: |-
