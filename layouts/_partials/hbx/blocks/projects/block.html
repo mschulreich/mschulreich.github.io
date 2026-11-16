@@ -12,7 +12,7 @@
       </a>
       <div class="proj-body">
         {{ with .meta }}<p class="proj-meta">{{ . }}</p>{{ end }}
-        <h3 class="proj-title"><a href="{{ .link | relLangURL }}">{{ .name }}</a></h3>
+        <h3 class="proj-title">{{ .name }}</h3>{{/* not a link: the image and the "Project page" button lead there */}}
         {{ with .subtitle }}<p class="proj-subtitle">{{ . }}</p>{{ end }}
         {{/* optional `text_extra`, appended from `text_extra_date` on (after a rebuild) */}}
         {{ $text := .text }}
