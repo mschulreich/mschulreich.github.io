@@ -428,30 +428,34 @@
   /* mission names (*Gaia*, *eROSITA*, *Fermi*) inside already italic text switch back to roman */
   em em, i em, em i { font-style: normal; }
   /* ══ Links: one consistent rule set ═══════════════════════════════════════
-     A) links inside running text  → accent colour + thin underline
-     B) titles that are links      → look like titles; accent + underline on hover
-                                     (no ↗ markers for external links anywhere)
-     C) compact actions (Slides, Video, Open on YouTube, e-mail, pills) → accent, underline on hover */
+     All links are in the accent colour and get a thin underline on hover/keyboard focus
+     (no ↗ markers for external links anywhere):
+     A) links inside running text  → accent colour
+     B) titles that are links      → accent colour, title weight
+     C) compact actions (Slides, Video, Open on YouTube, e-mail) → accent colour; outline pills fill on hover
+     Exception: links on the dark ORION header (.prj-facts) keep an underline, as they are white like the text. */
   /* one accent tone per mode, the same that HugoBlox uses for its own accents (timeline, icons) */
   :root { --link: var(--color-primary-600); }
   html.dark { --link: var(--color-primary-400); }
   #about .about-bio a, #about .about-cv a, #about .about-tools-list a, .sec-intro a, .prj-prose a, .out-text a, .out-desc a,
   .prj-funding a, .teach-note a, .teach-more a, .contact-text a, .contact-address a, .page-body .prose a {
-    color: var(--link); font-weight: inherit;
-    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
-    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
-    transition: text-decoration-color .15s;
+    color: var(--link); font-weight: inherit; text-decoration: none;
   }
   #about .about-bio a:hover, #about .about-cv a:hover, #about .about-tools-list a:hover, .sec-intro a:hover, .prj-prose a:hover, .out-text a:hover,
-  .out-desc a:hover, .prj-funding a:hover, .teach-note a:hover, .teach-more a:hover, .contact-text a:hover, .contact-address a:hover, .page-body .prose a:hover { text-decoration-color: currentColor; }
+  .out-desc a:hover, .prj-funding a:hover, .teach-note a:hover, .teach-more a:hover, .contact-text a:hover, .contact-address a:hover, .page-body .prose a:hover,
+  #about .about-bio a:focus-visible, #about .about-cv a:focus-visible, #about .about-tools-list a:focus-visible, .sec-intro a:focus-visible, .prj-prose a:focus-visible, .out-text a:focus-visible,
+  .out-desc a:focus-visible, .prj-funding a:focus-visible, .teach-note a:focus-visible, .teach-more a:focus-visible, .contact-text a:focus-visible, .contact-address a:focus-visible, .page-body .prose a:focus-visible {
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .prj-facts a { text-decoration-thickness: 1px; text-decoration-color: rgba(255,255,255,.5); }
   .prj-facts a:hover { text-decoration-color: #fff; }
 
-  .pubcard-title a, .proj-title a, .out-title a, .talk-event a, a.cite-title, a.svc-link { color: inherit; text-decoration: none; transition: color .15s; }
-  .pubcard-title a:hover, .proj-title a:hover, .out-title a:hover, .talk-event a:hover, a.cite-title:hover, a.svc-link:hover {
-    color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .pubcard-title a, .proj-title a, .out-title a, .talk-event a, a.cite-title, a.svc-link { color: var(--link); text-decoration: none; }
+  .pubcard-title a:hover, .proj-title a:hover, .out-title a:hover, .talk-event a:hover, a.cite-title:hover, a.svc-link:hover,
+  .pubcard-title a:focus-visible, .proj-title a:focus-visible, .out-title a:focus-visible, .talk-event a:focus-visible, a.cite-title:focus-visible, a.svc-link:focus-visible {
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
   .talk-link, .out-card-link, .pubcard-links a, .contact-email a { color: var(--link); text-decoration: none; }
+  .pubcards-archive a, .sec-archive a, .proj-cta a { color: var(--link); } /* "All publications →" etc.: violet outline pills */
   .talk-link:hover, .out-card-link:hover, .pubcard-links a:hover, .contact-email a:hover {
     text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   /* Tailwind prose uses a bluish slate text colour; use the site's text colour instead */
