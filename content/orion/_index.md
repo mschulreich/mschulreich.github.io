@@ -105,7 +105,7 @@ sections:
         - name: Jenny Feige
           inst: Museum für Naturkunde Berlin, Germany
           role: Radionuclide measurements (AMS)
-        - name: Josefa Großschedl
+        - name: Josefa E. Großschedl
           inst: Astronomical Institute of the Czech Academy of Sciences, Prague, Czechia
           role: Young star clusters in Orion–Eridanus
 

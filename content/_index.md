@@ -98,7 +98,7 @@ sections:
     content:
       title: Outreach
       image: outreach.jpg
-      image_alt: Michael M. Schulreich explaining planetary scales with a model during a public lecture
+      image_alt: Michael M. Schulreich explaining the core-collapse supernova explosion mechanism with a toy during a public lecture
       text: Sharing how the cosmos around us works — and how we can read its history in atoms on Earth — is part of my work.
       items:
         - when: Current
