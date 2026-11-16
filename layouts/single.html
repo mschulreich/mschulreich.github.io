@@ -362,7 +362,7 @@
 
       {{ if eq .Type "publications" }}
       {{/* publication pages: back to the list instead of a chronological previous/next navigation */}}
-      <p class="sec-archive pub-back"><a href="{{ "publications/" | relLangURL }}">← All publications</a></p>
+      <p class="sec-archive pub-back"><a href="{{ "publications/" | relLangURL }}">All publications</a></p>
       {{ else }}
       <div class="container mx-auto prose prose-slate lg:prose-xl dark:prose-invert mt-5">
         {{ .Scratch.Set "invert_pager" true }}

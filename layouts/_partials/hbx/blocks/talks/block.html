@@ -32,6 +32,6 @@
     <ul class="talk-list">
       {{ range first ($c.count | default 5) $talks }}{{ partial "talk-item.html" (dict "t" . "now" $now "labels" $labels) }}{{ end }}
     </ul>
-    {{ with $c.archive }}<p class="sec-archive"><a href="{{ .link | relLangURL }}">{{ .text | default "All talks" }} →</a></p>{{ end }}
+    {{ with $c.archive }}<p class="sec-archive"><a href="{{ .link | relLangURL }}">{{ .text | default "All talks" }}</a></p>{{ end }}
   {{ end }}
 </div>
