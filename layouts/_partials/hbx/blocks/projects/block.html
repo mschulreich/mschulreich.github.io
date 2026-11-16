@@ -19,7 +19,7 @@
         {{ if and .text_extra (or (not .text_extra_date) (not ((time .text_extra_date).After now))) }}{{ $text = printf "%s %s" .text .text_extra }}{{ end }}
         {{ with $text }}<div class="proj-text">{{ . | markdownify }}</div>{{ end }}
         <p class="proj-cta"><a href="{{ .link | relLangURL }}">{{ .link_text | default "Project page" }}</a></p>
-        {{ with .funder_logo }}{{ with resources.Get (printf "media/%s" .) }}<p class="proj-funder"><span>Funded by</span><img src="{{ .RelPermalink }}" alt="FWF – Austrian Science Fund"></p>{{ end }}{{ end }}
+        {{ with .funder_logo }}{{ with resources.Get (printf "media/%s" .) }}<p class="proj-funder"><span>Funded by</span><a href="https://www.fwf.ac.at/en/" target="_blank" rel="noopener"><img src="{{ .RelPermalink }}" alt="FWF – Austrian Science Fund"></a></p>{{ end }}{{ end }}
       </div>
     </article>
   {{ end }}

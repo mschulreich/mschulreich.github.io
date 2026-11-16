@@ -146,7 +146,7 @@
 
   {{/* ── Funding ── */}}
   {{ with $c.funding }}<section class="prj-section prj-funding">
-    {{ with $c.funding_logo }}{{ with resources.Get (printf "media/%s" .) }}<a class="prj-funding-logo" href="https://www.fwf.ac.at/" target="_blank" rel="noopener"><img src="{{ .RelPermalink }}" alt="FWF – Austrian Science Fund"></a>{{ end }}{{ end }}
+    {{ with $c.funding_logo }}{{ with resources.Get (printf "media/%s" .) }}<a class="prj-funding-logo" href="https://www.fwf.ac.at/en/" target="_blank" rel="noopener"><img src="{{ .RelPermalink }}" alt="FWF – Austrian Science Fund"></a>{{ end }}{{ end }}
     <div>{{ . | $page.RenderString }}</div>
   </section>{{ end }}
 </div>
