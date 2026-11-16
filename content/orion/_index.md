@@ -66,7 +66,7 @@ sections:
           icon: tests
           text: Predicted radionuclide signals compared with deep-sea sediments and crusts, Atacama Desert sediments, lunar samples, and Antarctic snow and ice, and the simulated bubbles with gamma-ray line, soft X-ray, and dust emission.
 
-      # software produced by the project: shown first under "Project outputs"
+      # software produced by the project: shown under "Project outputs" after Publications
       components:
         - name: RELIC
           publish_date: 2027-02-01     # hidden until a build on/after this date (RELIC submission)

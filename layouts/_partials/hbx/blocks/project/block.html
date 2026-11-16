@@ -21,7 +21,7 @@
       <dl class="prj-facts">
         {{ range $c.facts }}<div><dt>{{ .label }}</dt><dd>{{ .value | markdownify }}</dd></div>{{ end }}
       </dl>
-      {{ with $c.links }}<p class="prj-links">{{ range . }}<a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>{{ end }}</p>{{ end }}
+      {{ with $c.links }}<p class="prj-links">{{ range . }}<a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener"{{ end }}>{{ .text }} {{ if hasPrefix .url "#" }}↓{{ else }}→{{ end }}</a>{{ end }}</p>{{ end }}
     </div>
   </div>
 </div>
