@@ -56,6 +56,7 @@
   {{/* ── Research questions ── */}}
   {{ with $c.questions }}
     <section class="prj-section"><h2 class="sec-heading">Research questions</h2>
+      {{ with $c.questions_figure }}{{ partial (printf "figures/%s.html" .) $ }}{{ end }}
       <ol class="prj-questions">
         {{ range . }}<li><h3>{{ .title }}</h3><p>{{ .text | markdownify }}</p></li>{{ end }}
       </ol></section>

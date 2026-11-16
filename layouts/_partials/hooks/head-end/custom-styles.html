@@ -389,6 +389,12 @@
   @media (hover: hover) { .prj-dome:hover .prj-play, .movie-toggle:hover .movie-play { transform: scale(1.06); } }
   .prj-dome.is-playing .prj-play { opacity: 0; }
   .prj-media figcaption { margin: 1rem auto 0; max-width: 30rem; font-size: .85rem; line-height: 1.55; opacity: .7; text-align: center; }
+  /* schematic above the research questions: wide version on desktop, stacked version on phones */
+  .q-figure { margin: 0 0 1.75rem; }
+  .q-schema { display: block; width: 100%; height: auto; }
+  .q-schema--m { display: none; max-width: 560px; margin: 0 auto; }
+  @media (max-width: 999px) { .q-schema--d { display: none; } .q-schema--m { display: block; } }
+  html.dark .q-schema { --q-marker-text: #0d1117; --q-halo: #1a1c26; } /* halo = bubble tint, keeps labels clear of dashed lines */
   .prj-questions { list-style: none; counter-reset: q; margin: 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
   @media (min-width: 900px) { .prj-questions { grid-template-columns: repeat(2, 1fr); } }
   .prj-questions li { counter-increment: q; padding: 1.4rem 3.6rem 1.5rem 1.5rem; /* right padding keeps text clear of the number */ border-radius: 1rem; border: 1px solid rgba(127,127,127,.2); position: relative; }

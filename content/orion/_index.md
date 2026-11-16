@@ -38,6 +38,7 @@ sections:
 
         ORION reconstructs the cosmic story behind those waves. It combines state-of-the-art magnetohydrodynamic simulations of the Local Bubble and its neighboring superbubbles with the most precise three-dimensional map of nearby stars, from the ESA *Gaia* mission. By following the debris of every ancient supernova through space and time, we calculate when each cosmic shower should have reached the Earth and compare these predictions with what is actually measured in the archives.
 
+      questions_figure: orion-questions   # schematic above the cards (layouts/_partials/figures/)
       questions:
         - title: How did the bubbles around the Sun form and interact?
           text: High-resolution 3D MHD models of the Local Bubble and its neighboring superbubbles, including dust and radionuclide transport and anisotropic thermal conduction — released as templates for models of Galactic chemical evolution.
