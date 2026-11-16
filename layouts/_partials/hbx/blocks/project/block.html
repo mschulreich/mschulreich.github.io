@@ -77,6 +77,21 @@
          (like future-dated pages; the site is rebuilt weekly). */}}
     {{ $components := slice }}{{ range $c.components }}{{ if or (not .publish_date) (not ((time .publish_date).After now)) }}{{ $components = $components | append . }}{{ end }}{{ end }}
     {{ $products := slice }}{{ range $c.data_products }}{{ if or (not .publish_date) (not ((time .publish_date).After now)) }}{{ $products = $products | append . }}{{ end }}{{ end }}
+    {{/* ── Publications first: software and data refer to them ── */}}
+    <h3 class="sec-subheading">Publications</h3>
+    {{ $pubs := where (where site.RegularPages "Section" "publications") "Params.projects" "intersect" (slice $key) }}
+    {{ if $pubs }}
+      <ul class="talk-list">{{ range $pubs.ByDate.Reverse }}{{ partial "pub-item.html" . }}{{ end }}</ul>{{/* same entries as the publications page */}}
+    {{ end }}
+    {{/* not yet published: same markup as views/citation.html (authors (status). Title. Venue.) */}}
+    {{ with $c.upcoming_publications }}<div class="prj-pubs">{{ range . }}
+      <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
+        <span class="article-metadata li-cite-author">{{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<span class="font-bold">M. M. Schulreich</span>{{ else }}{{ $a }}{{ end }}{{ end }}</span>
+        ({{ .status | default "in prep." }}).
+        {{ .title | markdownify }}.{{ with .venue }} {{ . | markdownify }}.{{ end }}
+      </div>{{ end }}</div>{{ end }}
+    {{ if and (not $pubs) (not $c.upcoming_publications) }}<p class="sec-intro">Publications from the project will be listed here.</p>{{ end }}
+
     {{/* ── Software (e.g. RELIC) ── */}}
     {{ with $components }}
       <h3 class="sec-subheading">Software</h3>
@@ -91,7 +106,7 @@
             <h4 class="prj-component-title">{{ .name }}</h4>
             {{ with .longname }}<p class="prj-component-long">{{ . }}</p>{{ end }}
             <div class="prj-prose">{{ .text | $page.RenderString }}</div>
-            {{ with .links }}<p class="prj-links prj-links--dark">{{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .text }}</a>{{ end }}</p>{{ end }}
+            {{ with .links }}<p class="prj-links prj-links--dark">{{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .text }} →</a>{{ end }}</p>{{ end }}
           </div>
         </div>
       {{ end }}
@@ -110,25 +125,11 @@
           <div>
             <h4 class="prj-component-title">{{ $d.name | markdownify }}</h4>
             {{ with $d.description }}<div class="prj-prose"><p>{{ . | markdownify }}</p></div>{{ end }}
-            {{ with $d.url }}<p class="prj-links prj-links--dark"><a href="{{ . | relURL }}" target="_blank" rel="noopener">{{ $d.link_text | default "View" }}</a></p>{{ end }}
+            {{ with $d.url }}<p class="prj-links prj-links--dark"><a href="{{ . | relURL }}" target="_blank" rel="noopener">{{ $d.link_text | default "View" }} →</a></p>{{ end }}
           </div>
         </div>
       {{ end }}
     {{ end }}
-
-    <h3 class="sec-subheading">Publications</h3>
-    {{ $pubs := where (where site.RegularPages "Section" "publications") "Params.projects" "intersect" (slice $key) }}
-    {{ if $pubs }}
-      <ul class="talk-list">{{ range $pubs.ByDate.Reverse }}{{ partial "pub-item.html" . }}{{ end }}</ul>{{/* same entries as the publications page */}}
-    {{ end }}
-    {{/* not yet published: same markup as views/citation.html (authors (status). Title. Venue.) */}}
-    {{ with $c.upcoming_publications }}<div class="prj-pubs">{{ range . }}
-      <div class="pub-list-item view-citation" style="margin-bottom: 1rem">
-        <span class="article-metadata li-cite-author">{{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if eq $a "me" }}<span class="font-bold">M. M. Schulreich</span>{{ else }}{{ $a }}{{ end }}{{ end }}</span>
-        ({{ .status | default "in prep." }}).
-        {{ .title | markdownify }}.{{ with .venue }} {{ . | markdownify }}.{{ end }}
-      </div>{{ end }}</div>{{ end }}
-    {{ if and (not $pubs) (not $c.upcoming_publications) }}<p class="sec-intro">Publications from the project will be listed here.</p>{{ end }}
 
     {{ $talks := where hugo.Data.talks "project" $key }}
     {{ if $talks }}

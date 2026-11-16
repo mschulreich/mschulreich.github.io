@@ -73,7 +73,7 @@ sections:
           longname: Reconstructing Explosive Lineages In Clusters
           logo: projects/relic-logo.png
           text: |-
-            RELIC is a probabilistic framework for supernova archaeology. Starting from *Gaia* data of nearby young star clusters, it reconstructs which massive stars have already exploded, when, and where — with full uncertainty propagation — and thereby provides the supernova histories that drive the ORION simulations. Its first application is the Scorpius–Centaurus association, the birthplace of the Local Bubble.
+            RELIC is a probabilistic framework for supernova archaeology. Starting from *Gaia* data of nearby young star clusters, it reconstructs which massive stars have already exploded, when, and where — with full uncertainty propagation — and thereby provides the supernova histories that drive the ORION simulations. Its first application is the Scorpius–Centaurus (Sco–Cen) association, the birthplace of the Local Bubble.
 
             The code will be released on GitHub together with the first RELIC paper.
           links:
