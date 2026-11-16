@@ -11,7 +11,7 @@ sections:
       title: Publications
       intro: |-
         Refereed journal articles, conference contributions, white papers, and my PhD thesis. Citation metrics are available on
-        [SciX/ADS](https://scixplorer.org/search?p=1&q=author%3A%22schulreich%2C+m%22&sort=date+desc&d=general),
+        [SciX](https://scixplorer.org/search?p=1&q=author%3A%22schulreich%2C+m%22&sort=date+desc&d=general),
         and my full record on [ORCID](https://orcid.org/0000-0001-7761-9766).
       # groups in display order; a group without entries is not shown
       groups:
