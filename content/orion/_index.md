@@ -82,10 +82,9 @@ sections:
 
       # data products and visualizations (listed under "Project outputs" after Software)
       data_products:
-        - name: Sco–Cen superbubble in 3D
+        - page: /relic/scocen          # title and link (and the full caption) come from content/relic/scocen/index.md
+          description: 'Interactive 3D version of a figure from the RELIC paper: the Sco–Cen superbubble, a Local Bubble analog, overlaid on the 3D interstellar dust maps of [Edenhofer et al. (2024)](https://doi.org/10.1051/0004-6361/202347628), together with the Sun’s trajectory over the past 12 Myr. The bubble is shown at three epochs, from the Sun’s entry into the Local Bubble to today.'
           publish_date: 2027-02-01     # hidden until a build on/after this date (RELIC submission)
-          description: 'Interactive 3D version of a figure from the RELIC paper: the Sco–Cen superbubble, a Local Bubble analog, as predicted by the generalized Kompaneets model, overlaid on the 3D interstellar dust maps of [Edenhofer et al. (2024)](https://doi.org/10.1051/0004-6361/202347628). The bubble is shown at three epochs — when the Sun entered the Local Bubble, at the time of the most recent <sup>60</sup>Fe signal on Earth, and today — in purple shades that grow lighter toward the present. The orange curve traces the Sun’s trajectory over the past 12 Myr up to its present position, with the Sun marked in white at its entry into the Local Bubble and in yellow at the time of the <sup>60</sup>Fe signal. Cyan dots mark the present-day Sco–Cen members, and a cross the effective supernova source.'
-          url: relic/scocen/
           link_text: View in 3D
           image: projects/scocen-3d.jpg   # preview (screenshot of the scene), links to the scene
 

@@ -579,3 +579,20 @@
   .sup-cards li:last-child { margin-bottom: 0; }
   .sup-title { font-size: .9rem; opacity: .85; }
 </style>
+<style>
+  /* ── 3D scene page (layouts/scene/single.html) ── */
+  .scene-frame { position: relative; margin: 0 0 1.75rem; aspect-ratio: 16 / 10; background: #000; border-radius: .5rem; overflow: hidden; }
+  .scene-frame img, .scene-frame iframe { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
+  .scene-frame.is-loaded { aspect-ratio: auto; height: min(78vh, 62vw); min-height: 360px; }
+  .scene-load { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .4rem;
+    background: rgba(0,0,0,.45); color: #fff; cursor: pointer; transition: background .2s; padding: 1rem; text-align: center; }
+  .scene-load:hover, .scene-load:focus-visible { background: rgba(0,0,0,.3); }
+  .scene-load-title { font-size: 1.25rem; font-weight: 600; padding: .55rem 1.2rem; border: 1px solid rgba(255,255,255,.8); border-radius: 999px; }
+  .scene-load-note { font-size: .9rem; opacity: .85; }
+  .scene-fs { position: absolute; top: .75rem; right: .75rem; padding: .3rem .8rem; border: 1px solid rgba(255,255,255,.7); border-radius: 999px;
+    background: rgba(0,0,0,.55); color: #fff !important; font-size: .9rem; text-decoration: none !important; }
+  .scene-fs:hover, .scene-fs:focus-visible { background: rgba(0,0,0,.8); }
+  .scene-frame:fullscreen { border-radius: 0; height: 100%; }
+  .scene-frame:fullscreen .scene-fs { display: none; }
+  .scene-caption { font-size: 1.125rem; line-height: 1.7; }
+</style>

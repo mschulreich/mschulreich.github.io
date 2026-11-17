@@ -115,17 +115,23 @@
     {{ with $products }}
       <h3 class="sec-subheading">Data &amp; visualizations</h3>
       {{ range $d := . }}
+        {{/* `page:` takes name, description and link from a page of its own (e.g. a 3D scene page) */}}
+        {{/* (a `description:` given here still wins, e.g. a short version of the page's caption) */}}
+        {{ $name := $d.name }}{{ $desc := "" }}{{ $url := "" }}{{ with $d.url }}{{ $url = . | relURL }}{{ end }}{{ $ext := true }}
+        {{ with $d.page }}{{ with site.GetPage . }}{{ $name = .Title }}{{ $desc = .Params.caption }}{{ $url = .RelPermalink }}{{ $ext = false }}{{ end }}{{ end }}
+        {{ with $d.description }}{{ $desc = . }}{{ end }}
+        {{ $tgt := cond $ext ` target="_blank" rel="noopener"` "" }}
         {{ $img := "" }}{{ with $d.image }}{{ $img = resources.Get (printf "media/%s" .) }}{{ end }}
         <div class="prj-component{{ if not $img }} prj-component--nologo{{ end }}">
           {{ with $img }}{{ $i := .Resize "700x webp q85" }}
-            <a class="prj-dp-preview" href="{{ $d.url | relURL }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class="prj-dp-preview" href="{{ $url }}"{{ $tgt | safeHTMLAttr }} tabindex="-1" aria-hidden="true">
               <img class="prj-component-logo" src="{{ $i.RelPermalink }}" width="{{ $i.Width }}" height="{{ $i.Height }}" alt="" loading="lazy">
             </a>
           {{ end }}
           <div>
-            <h4 class="prj-component-title">{{ $d.name | markdownify }}</h4>
-            {{ with $d.description }}<div class="prj-prose"><p>{{ . | markdownify }}</p></div>{{ end }}
-            {{ with $d.url }}<p class="prj-links prj-links--dark"><a href="{{ . | relURL }}" target="_blank" rel="noopener">{{ $d.link_text | default "View" }}</a></p>{{ end }}
+            <h4 class="prj-component-title">{{ $name | markdownify }}</h4>
+            {{ with $desc }}<div class="prj-prose"><p>{{ . | markdownify }}</p></div>{{ end }}
+            {{ with $url }}<p class="prj-links prj-links--dark"><a href="{{ . }}"{{ $tgt | safeHTMLAttr }}>{{ $d.link_text | default "View" }}</a></p>{{ end }}
           </div>
         </div>
       {{ end }}
