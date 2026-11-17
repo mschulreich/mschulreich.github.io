@@ -2,6 +2,8 @@
 title: ''
 summary: ''
 type: landing
+seo:
+  title: '{brand}, Astrophysicist'   # browser tab, Google title and sharing-card title of the home page only
 
 sections:
   # ── Block 0: Splash (custom block, layouts/_partials/hbx/blocks/splash) ──
