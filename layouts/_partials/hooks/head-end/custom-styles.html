@@ -444,13 +444,13 @@
   /* one accent tone per mode, the same that HugoBlox uses for its own accents (timeline, icons) */
   :root { --link: var(--color-primary-600); }
   html.dark { --link: var(--color-primary-400); }
-  #about .about-bio a, #about .about-cv a, #about .about-tools-list a, .sec-intro a, .prj-prose a, .out-text a, .out-desc a,
+  #about .about-bio a, #about .about-cv a, #about .about-tools-list a, .sec-intro a, .nf-text a, .prj-prose a, .out-text a, .out-desc a,
   .prj-funding a, .teach-note a, .teach-more a, .contact-text a, .contact-address a, .page-body .prose a {
     color: var(--link); font-weight: inherit; text-decoration: none;
   }
-  #about .about-bio a:hover, #about .about-cv a:hover, #about .about-tools-list a:hover, .sec-intro a:hover, .prj-prose a:hover, .out-text a:hover,
+  #about .about-bio a:hover, #about .about-cv a:hover, #about .about-tools-list a:hover, .sec-intro a:hover, .nf-text a:hover, .prj-prose a:hover, .out-text a:hover,
   .out-desc a:hover, .prj-funding a:hover, .teach-note a:hover, .teach-more a:hover, .contact-text a:hover, .contact-address a:hover, .page-body .prose a:hover,
-  #about .about-bio a:focus-visible, #about .about-cv a:focus-visible, #about .about-tools-list a:focus-visible, .sec-intro a:focus-visible, .prj-prose a:focus-visible, .out-text a:focus-visible,
+  #about .about-bio a:focus-visible, #about .about-cv a:focus-visible, #about .about-tools-list a:focus-visible, .sec-intro a:focus-visible, .nf-text a:focus-visible, .prj-prose a:focus-visible, .out-text a:focus-visible,
   .out-desc a:focus-visible, .prj-funding a:focus-visible, .teach-note a:focus-visible, .teach-more a:focus-visible, .contact-text a:focus-visible, .contact-address a:focus-visible, .page-body .prose a:focus-visible {
     text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .prj-facts a { text-decoration-thickness: 1px; text-decoration-color: rgba(255,255,255,.5); }
@@ -595,4 +595,8 @@
   .scene-frame:fullscreen { border-radius: 0; height: 100%; }
   .scene-frame:fullscreen .scene-fs { display: none; }
   .scene-caption { font-size: 1.125rem; line-height: 1.7; }
+</style>
+<style>
+  /* ── 404 page (layouts/404.html) ── */
+  .nf-text { font-size: 1.125rem; line-height: 1.7; margin: 1.5rem 0 0; }
 </style>

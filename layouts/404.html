@@ -1,0 +1,12 @@
+{{/* Override of the HugoBlox 404 page: instead of a list of the latest pages, only a short note
+     (the menu covers the ways back). */}}
+{{- define "main" -}}
+<div data-pagefind-ignore class="mx-auto flex max-w-screen-xl">
+  <article class="w-full break-words flex min-w-0 justify-center pb-8">
+    <main class="w-full min-w-0 pt-4 pub-page nf-page">
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Page not found</h1>
+      <p class="nf-text">This page does not exist or has moved. Please use the menu above or return to the <a href="{{ "/" | relURL }}">home page</a>.</p>
+    </main>
+  </article>
+</div>
+{{- end -}}
