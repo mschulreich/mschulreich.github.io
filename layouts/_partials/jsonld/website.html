@@ -1,0 +1,18 @@
+{{/* Override of the HugoBlox partial: adds the site name, which Google shows above the result
+     (without it, Google falls back to the host's name, "GitHub"). */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Params.hugoblox.identity.name | default site.Title }},
+  "alternateName": "Michael Schulreich",
+  {{- if site.Params.hugoblox.search.enable }}
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ printf "%s?q={search_term_string}" site.BaseURL }},
+    "query-input": "required name=search_term_string"
+  },
+  {{end -}}
+  "url": {{site.BaseURL}}
+}
+</script>
