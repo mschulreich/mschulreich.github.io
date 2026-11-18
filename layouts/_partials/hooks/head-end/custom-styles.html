@@ -534,6 +534,9 @@
   /* small action links (talks: Slides/Video; outreach: Open on YouTube) like the publication link row */
   .talk-link, .out-card-link { font-size: .75rem; font-weight: 600; letter-spacing: .025em; text-transform: uppercase; }
   .action-icon { display: inline-block; height: 1em; width: 1em; vertical-align: -.15em; margin-right: .25em; }
+  /* HugoBlox links with icon (ADS, Cite, Preprint, DOI, …): flex drops the space between icon and text,
+     so the hover underline covers only the text, as for the links with .action-icon */
+  .hb-attachment-link { display: inline-flex; align-items: center; gap: .3em; }
   /* section heading spacing, one rule for the whole site:
      heading -> intro text 20 px (intro belongs to the heading), heading -> content 32 px */
   #about .about-heading { margin-bottom: 1.7rem; }                 /* bio text has a tall line height */
