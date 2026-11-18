@@ -473,7 +473,7 @@
   /* CV timeline markers in the accent tone of the current mode */
   #about .about-cv .border-secondary-500, #about .about-cv .border-primary-500 { border-color: var(--link) !important; }
   /* timeline line and marker glow in the same tone as the markers (HugoBlox used a fixed 500→400 gradient) */
-  #about .about-cv .w-0\.5[class*="from-"] { background-image: linear-gradient(to bottom, var(--link) 0%, var(--link) 80%, color-mix(in srgb, var(--link) 30%, transparent) 100%) !important; }
+  #about .about-cv .w-0\.5[class*="from-"] { background-image: linear-gradient(to bottom, var(--link) 0%, var(--link) calc(100% - 4.5rem), transparent 100%) !important; } /* fades out below the last marker */
   #about .about-cv .blur-md { background-color: color-mix(in srgb, var(--link) 30%, transparent) !important; }
   html.dark #about .about-cv .w-8.h-8.border-2 { background-color: var(--hb-color-background, #0d1117) !important; } /* was grey */
   .page-body .prose { --tw-prose-body: currentColor; --tw-prose-headings: currentColor; --tw-prose-bold: currentColor; color: inherit; }
