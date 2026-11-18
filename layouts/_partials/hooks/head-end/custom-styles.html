@@ -197,9 +197,9 @@
   #about .about-chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
   #about .about-chips li {
     padding: .45rem 1rem; border-radius: 9999px; font-size: .95rem;
-    background: color-mix(in srgb, var(--link) 7%, transparent); color: var(--link);
-    border: 1px solid color-mix(in srgb, var(--link) 18%, transparent);
+    background: rgba(0,0,0,.05); border: 1px solid rgba(0,0,0,.08);   /* gray, not violet: not clickable */
   }
+  .dark #about .about-chips li { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
   #about .about-cv { margin-top: 4.5rem; }
 
   /* Positions | Education side by side on desktop (embedded resume-experience block) */
