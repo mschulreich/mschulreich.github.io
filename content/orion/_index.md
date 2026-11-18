@@ -83,7 +83,7 @@ sections:
       # data products and visualizations (listed under "Project outputs" after Software)
       data_products:
         - page: /relic/scocen          # title and link (and the full caption) come from content/relic/scocen/index.md
-          description: 'Interactive 3D version of a figure from the RELIC paper: the Sco–Cen superbubble, a Local Bubble analog, overlaid on the 3D interstellar dust maps of [Edenhofer et al. (2024)](https://doi.org/10.1051/0004-6361/202347628), together with the Sun’s trajectory over the past 12 Myr. The bubble is shown at three epochs, from the Sun’s entry into the Local Bubble to today.'
+          description: 'Interactive 3D version of a figure from the [RELIC paper](/publications/2027-relic-reconstructing-explosive-lineages-clusters/): the Sco–Cen superbubble, a Local Bubble analog, overlaid on the 3D interstellar dust maps of [Edenhofer et al. (2024)](https://doi.org/10.1051/0004-6361/202347628), together with the Sun’s trajectory over the past 12 Myr. The bubble is shown at three epochs, from the Sun’s entry into the Local Bubble to today.'
           publish_date: 2027-02-01     # hidden until a build on/after this date (RELIC submission)
           link_text: View in 3D
           image: projects/scocen-3d.jpg   # preview (screenshot of the scene), links to the scene
