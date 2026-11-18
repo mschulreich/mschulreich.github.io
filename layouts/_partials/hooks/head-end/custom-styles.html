@@ -284,11 +284,10 @@
   .talk-badge { display: inline-block; font-size: .72rem; letter-spacing: .03em; text-transform: uppercase; padding: .1rem .5rem; border-radius: 9999px;
     border: 1px solid rgba(127,127,127,.35); opacity: .9; }
   .talk-badge { align-self: center; line-height: 1.5; } /* in flex rows (publication pages) do not stretch to the row height */
-  .talk-badge--invited { border-color: color-mix(in srgb, var(--link) 55%, transparent); color: var(--link); }
-  html.dark .talk-badge--invited { color: var(--link); }
-  .talk-badge--upcoming { margin-left: .4rem; background: var(--link); border-color: var(--link); color: #fff; }
-  /* dark mode: same light violet as the links, dark text for contrast */
-  html.dark .talk-badge--upcoming { background: var(--link); border-color: var(--link); color: #0d1117; opacity: 1; }
+  /* badges are not links, so not violet: Invited, Peer-reviewed, Open access, service roles keep the gray
+     outline of .talk-badge; Upcoming stands out in black/white (inverted in dark mode) */
+  .talk-badge--upcoming { margin-left: .4rem; background: #24292f; border-color: #24292f; color: #fff; }
+  html.dark .talk-badge--upcoming { background: #c9d1d9; border-color: #c9d1d9; color: #0d1117; opacity: 1; }
   .talk-link { font-weight: 600; color: var(--link); }
   .oa-lock { display: inline-block; width: 1em; height: 1em; margin: -.15em .3em 0 0; vertical-align: middle; }
 
