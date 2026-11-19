@@ -23,7 +23,7 @@ hugoblox:
     arxiv: "1704.08221"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2017A%26A...604A..81S
-    label: ADS
+    url: https://scixplorer.org/abs/2017A%26A...604A..81S
+    label: SciX
 # SciX/ADS bibcode: 2017A&A...604A..81S
 ---

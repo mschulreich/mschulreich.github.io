@@ -24,7 +24,7 @@ hugoblox:
     doi: "10.1038/nature17424"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2016Natur.532...73B
-    label: ADS
+    url: https://scixplorer.org/abs/2016Natur.532...73B
+    label: SciX
 # SciX/ADS bibcode: 2016Natur.532...73B
 ---

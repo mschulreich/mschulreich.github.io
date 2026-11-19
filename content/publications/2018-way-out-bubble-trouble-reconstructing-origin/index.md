@@ -22,7 +22,7 @@ hugoblox:
     arxiv: "1802.09275"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2018Galax...6...26S
-    label: ADS
+    url: https://scixplorer.org/abs/2018Galax...6...26S
+    label: SciX
 # SciX/ADS bibcode: 2018Galax...6...26S
 ---

@@ -17,7 +17,7 @@ abstract: "Supernovae remnants are known as promising sites for accelerating par
 featured: false
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2024sros.confE.171S
-    label: ADS
+    url: https://scixplorer.org/abs/2024sros.confE.171S
+    label: SciX
 # SciX/ADS bibcode: 2024sros.confE.171S
 ---

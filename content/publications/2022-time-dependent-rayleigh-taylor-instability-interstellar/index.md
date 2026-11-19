@@ -21,7 +21,7 @@ hugoblox:
     arxiv: "2110.04166"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2022MNRAS.509..716S
-    label: ADS
+    url: https://scixplorer.org/abs/2022MNRAS.509..716S
+    label: SciX
 # SciX/ADS bibcode: 2022MNRAS.509..716S
 ---

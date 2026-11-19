@@ -56,7 +56,7 @@ hugoblox:
     arxiv: "1903.04589"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2019BAAS...51c.410F
-    label: ADS
+    url: https://scixplorer.org/abs/2019BAAS...51c.410F
+    label: SciX
 # SciX/ADS bibcode: 2019BAAS...51c.410F
 ---

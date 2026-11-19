@@ -22,7 +22,7 @@ hugoblox:
     arxiv: "2506.23564"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2025ApJ...988..255S
-    label: ADS
+    url: https://scixplorer.org/abs/2025ApJ...988..255S
+    label: SciX
 # SciX/ADS bibcode: 2025ApJ...988..255S
 ---

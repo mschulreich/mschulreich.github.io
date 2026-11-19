@@ -19,7 +19,7 @@ hugoblox:
     doi: "10.14279/depositonce-4899"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2015PhDT.......692S
-    label: ADS
+    url: https://scixplorer.org/abs/2015PhDT.......692S
+    label: SciX
 # SciX/ADS bibcode: 2015PhDT.......692S
 ---

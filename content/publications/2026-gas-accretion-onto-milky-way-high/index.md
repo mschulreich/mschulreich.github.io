@@ -21,8 +21,8 @@ hugoblox:
     arxiv: "2607.20394"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2026MNRAS.551g1405S
-    label: ADS
+    url: https://scixplorer.org/abs/2026MNRAS.551g1405S
+    label: SciX
   - type: video
     url: /publications/2026-gas-accretion-onto-milky-way-high/#movies
     label: Movies

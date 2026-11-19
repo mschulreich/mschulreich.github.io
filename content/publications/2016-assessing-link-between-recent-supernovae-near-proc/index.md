@@ -16,7 +16,7 @@ abstract: "Some time ago, an enhanced concentration of the radionuclide <sup>60<
 featured: false
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2016sros.confE.113S
-    label: ADS
+    url: https://scixplorer.org/abs/2016sros.confE.113S
+    label: SciX
 # SciX/ADS bibcode: 2016sros.confE.113S
 ---

@@ -29,7 +29,7 @@ hugoblox:
     doi: "10.22323/1.501.0092"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2025icrc.confE..92B
-    label: ADS
+    url: https://scixplorer.org/abs/2025icrc.confE..92B
+    label: SciX
 # SciX/ADS bibcode: 2025icrc.confE..92B
 ---

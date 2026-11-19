@@ -34,7 +34,7 @@ hugoblox:
     arxiv: "1611.01431"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2017nuco.confa0304F
-    label: ADS
+    url: https://scixplorer.org/abs/2017nuco.confa0304F
+    label: SciX
 # SciX/ADS bibcode: 2017nuco.confa0304F
 ---

@@ -22,8 +22,8 @@ hugoblox:
     arxiv: "2309.13983"
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2023A%26A...680A..39S
-    label: ADS
+    url: https://scixplorer.org/abs/2023A%26A...680A..39S
+    label: SciX
   - type: video
     url: /publications/2023-numerical-studies-link-between-radioisotopic-signatures/#movies
     label: Movie

@@ -6,12 +6,18 @@
 {{ $built := partial "functions/build_links" (dict "page" $page "is_list" $is_list) }}
 
 {{/* Override: extra links from the page's own `links:` (e.g. Movies, 3D scene) go last,
-     after ADS, Cite, Preprint, DOI. ADS keeps its place at the front. */}}
+     after DOI, arXiv, SciX and Cite (ordered below). */}}
 {{ $extraUrls := slice }}
-{{ range $page.Params.links }}{{ if ne .label "ADS" }}{{ $extraUrls = $extraUrls | append .url }}{{ end }}{{ end }}
+{{ range $page.Params.links }}{{ if ne .label "SciX" }}{{ $extraUrls = $extraUrls | append .url }}{{ end }}{{ end }}
 {{ $front := slice }}{{ $back := slice }}
 {{ range $built }}{{ if in $extraUrls .url }}{{ $back = $back | append . }}{{ else }}{{ $front = $front | append . }}{{ end }}{{ end }}
-{{ $built = $front | append $back }}
+{{/* Override: order DOI · arXiv · SciX · Cite (the paper first, the BibTeX copy last) */}}
+{{ $ranked := slice }}
+{{ range $r := slice "btn_doi" "btn_preprint" "SciX" "bibtex" }}
+  {{ range $front }}{{ if or (eq .labelKey $r) (eq .label $r) (eq .type $r) }}{{ $ranked = $ranked | append . }}{{ end }}{{ end }}
+{{ end }}
+{{ range $front }}{{ if not (in $ranked .) }}{{ $ranked = $ranked | append . }}{{ end }}{{ end }}
+{{ $built = $ranked | append $back }}
 
 {{ $ctx := cond $is_list "list" "page" }}
 
@@ -68,14 +74,20 @@
       {{ $label = "Link" }}
     {{ end }}
 
+    {{/* Override: logos instead of generic icons for SciX, arXiv and DOI (Academicons, single colour) */}}
+    {{ $icon := .icon }}
+    {{ if eq $label "SciX" }}{{ $icon = "academicons/ads" }}{{ end }}
+    {{ if eq .labelKey "btn_preprint" }}{{ $icon = "academicons/arxiv" }}{{ if strings.Contains $url "arxiv.org" }}{{ $label = "arXiv" }}{{ end }}{{ end }}
+    {{ if eq .labelKey "btn_doi" }}{{ $icon = "academicons/doi" }}{{ end }}
+
     {{ if eq .type "bibtex" }}
       <button class="{{ $classes }} js-cite-clipboard cursor-pointer" type="button" data-filename="{{ $url }}">
-        {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/document-duplicate") "attributes" "style=\"height: 1em\" class='inline-block'") }}
+        {{ partial "functions/get_icon" (dict "name" ($icon | default "hero/document-duplicate") "attributes" "style=\"height: 1em\" class='inline-block'") }}
         <span>{{ $label }}</span>
       </button>
     {{ else }}
       <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }}>
-        {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block'") }}
+        {{ partial "functions/get_icon" (dict "name" ($icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block'") }}
         {{ $label }}
       </a>
     {{ end }}

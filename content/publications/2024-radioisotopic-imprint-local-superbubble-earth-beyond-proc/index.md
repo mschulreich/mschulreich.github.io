@@ -16,7 +16,7 @@ abstract: "In recent years, measurements of intermediate-lived radioisotopes hav
 featured: false
 links:
   - type: source
-    url: https://ui.adsabs.harvard.edu/abs/2024eas..conf...53S
-    label: ADS
+    url: https://scixplorer.org/abs/2024eas..conf...53S
+    label: SciX
 # SciX/ADS bibcode: 2024eas..conf...53S
 ---
